@@ -150,3 +150,4 @@ smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepte
 [2026-04-18 21:05:23,460] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
 [2026-04-18 21:05:23,787] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
 [2026-04-18 21:05:24,120] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:19:32,571] INFO django.utils.autoreload Watching for file changes with StatReloader
