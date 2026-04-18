@@ -1,0 +1,46 @@
+{% extends 'adminpanel/base.html' %}
+
+{% block title %}Edit {{ obj.get_page_display }}{% endblock %}
+{% block topbar_title %}Edit Page — {{ obj.get_page_display }}{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-8">
+
+    <div class="page-header">
+      <div>
+        <h4>Edit: {{ obj.get_page_display }}</h4>
+        <p>Last updated: {{ obj.updated_at|date:"d M Y, H:i" }}</p>
+      </div>
+      <a href="{% url 'ap:pages_list' %}" class="btn btn-outline-secondary btn-sm">
+        <i class="fas fa-arrow-left me-1"></i> Back
+      </a>
+    </div>
+
+    <div class="form-card">
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label class="form-label">Page Title</label>
+          {{ form.title }}
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">Content</label>
+          {{ form.content }}
+          <div class="text-muted mt-1" style="font-size:.77rem;">Plain text or basic HTML accepted.</div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn-ap btn">
+            <i class="fas fa-save me-1"></i> Save Changes
+          </button>
+          <a href="{% url 'ap:pages_list' %}" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

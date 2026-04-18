@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}Payment Successful{% endblock %}
+
+{% block content %}
+<section class="section-py">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-7">
+
+        <div class="form-card text-center" style="padding:2.5rem 2rem;">
+
+          <!-- Success icon -->
+          <div style="width:80px;height:80px;background:linear-gradient(135deg,#10b981,#059669);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2.2rem;box-shadow:0 8px 30px rgba(16,185,129,.3);">
+            ✓
+          </div>
+
+          <h4 style="color:#059669;margin-bottom:.35rem;">Payment Successful!</h4>
+          <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;">
+            Your {{ data.type|lower }} has been confirmed. May the divine blessings be with you.
+          </p>
+
+          <!-- Receipt box -->
+          <div style="background:var(--off-white);border-radius:12px;padding:1.4rem;margin-bottom:1.75rem;text-align:left;border:1px solid rgba(200,136,42,.15);">
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f0e0b0;">
+              <span style="color:#888;font-size:.82rem;">Name</span>
+              <span style="font-weight:600;font-size:.88rem;">{{ data.name }}</span>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f0e0b0;">
+              <span style="color:#888;font-size:.82rem;">Type</span>
+              <span style="font-weight:600;font-size:.88rem;">{{ data.type }}</span>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f0e0b0;">
+              <span style="color:#888;font-size:.82rem;">Description</span>
+              <span style="font-weight:600;font-size:.88rem;">{{ data.description }}</span>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f0e0b0;">
+              <span style="color:#888;font-size:.82rem;">Transaction ID</span>
+              <span style="font-weight:600;font-size:.78rem;color:#555;word-break:break-all;">{{ data.reference }}</span>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0 0;">
+              <span style="color:#888;font-size:.82rem;">Amount Paid</span>
+              <span style="font-weight:700;font-size:1.5rem;color:#059669;">₹{{ data.amount }}</span>
+            </div>
+          </div>
+
+          <!-- Status badge -->
+          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);color:#059669;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:1.75rem;">
+            <i class="fas fa-check-circle"></i> Payment Confirmed
+          </div>
+
+          <!-- Action buttons -->
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            {% if data.type == 'Donation' %}
+            <a href="{% url 'donations' %}" class="btn-saffron justify-content-center" style="display:flex;padding:13px;">
+              <i class="fas fa-heart me-2"></i> Make Another Donation
+            </a>
+            {% else %}
+            <a href="{% url 'seva' %}" class="btn-saffron justify-content-center" style="display:flex;padding:13px;">
+              <i class="fas fa-hands-praying me-2"></i> Book Another Seva
+            </a>
+            {% endif %}
+            <a href="{% url 'home' %}" style="font-size:.85rem;color:var(--text-muted);text-decoration:none;">
+              <i class="fas fa-home me-1"></i> Return to Home
+            </a>
+          </div>
+
+          <p style="margin-top:1.75rem;font-size:.74rem;color:#aaa;line-height:1.6;">
+            <i class="fas fa-envelope me-1"></i>
+            A receipt has been sent to your registered email address.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

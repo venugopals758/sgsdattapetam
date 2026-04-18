@@ -1,0 +1,102 @@
+{% extends 'adminpanel/base.html' %}
+{% block title %}Page Sections{% endblock %}
+{% block topbar_title %}Page Sections{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <h4>Page Sections</h4>
+    <p>Manage dynamic content blocks for each page</p>
+  </div>
+  <a href="{% url 'ap:section_create' %}" class="btn-ap btn">
+    <i class="fas fa-plus me-1"></i> Add Section
+  </a>
+</div>
+
+{% if request.GET.page %}
+<div class="mb-3">
+  <span class="text-muted" style="font-size:.82rem;">
+    Filtering by page: <strong>{{ request.GET.page }}</strong> —
+    <a href="{% url 'ap:sections_list' %}">Show all</a>
+  </span>
+</div>
+{% endif %}
+
+<div class="ap-table">
+  <div class="ap-table-body">
+    <table id="tbl-sections" class="table table-hover align-middle w-100">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Page</th>
+          <th>Section</th>
+          <th>Title</th>
+          <th>Image</th>
+          <th>Order</th>
+          <th>Status</th>
+          <th>Updated</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in sections %}
+        {% if not request.GET.page or s.page_slug == request.GET.page %}
+        <tr>
+          <td class="text-muted">{{ forloop.counter }}</td>
+          <td><code style="font-size:.78rem;background:#f3f4f6;padding:2px 6px;border-radius:4px;">{{ s.page_slug }}</code></td>
+          <td class="text-muted" style="font-size:.82rem;">{{ s.get_section_key_display }}</td>
+          <td class="fw-500">{{ s.title|default:"—" }}</td>
+          <td>
+            {% if s.image %}
+            <a href="{{ s.image.url }}" target="_blank" style="font-size:.78rem;">
+              <i class="fas fa-image me-1"></i>View
+            </a>
+            {% else %}
+            <span class="text-muted" style="font-size:.78rem;">—</span>
+            {% endif %}
+          </td>
+          <td class="text-muted">{{ s.order }}</td>
+          <td>
+            <span class="status-badge {% if s.is_active %}completed{% else %}failed{% endif %}">
+              {% if s.is_active %}Active{% else %}Inactive{% endif %}
+            </span>
+          </td>
+          <td class="text-muted" style="font-size:.78rem;white-space:nowrap;">{{ s.updated_at|date:"d M Y" }}</td>
+          <td>
+            <div class="d-flex gap-1">
+              <a href="{% url 'ap:section_edit' s.pk %}" class="btn btn-sm btn-outline-secondary" title="Edit">
+                <i class="fas fa-pencil"></i>
+              </a>
+              <a href="{% url 'ap:section_delete' s.pk %}" class="btn btn-sm btn-outline-danger" title="Delete">
+                <i class="fas fa-trash"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+        {% endif %}
+        {% empty %}
+        <tr><td colspan="9" class="text-center text-muted py-4">No sections yet. <a href="{% url 'ap:section_create' %}">Add one</a></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(function () {
+  $('#tbl-sections').DataTable({
+    pageLength: 25,
+    order: [[1, 'asc'], [5, 'asc']],
+    columnDefs: [{ orderable: false, targets: [0, 8] }],
+    language: {
+      search: '', searchPlaceholder: 'Search sections…',
+      lengthMenu: 'Show _MENU_',
+      info: 'Showing _START_–_END_ of _TOTAL_',
+      paginate: { previous: '‹', next: '›' },
+    }
+  });
+});
+</script>
+{% endblock %}

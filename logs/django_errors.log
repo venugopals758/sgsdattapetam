@@ -1,0 +1,141 @@
+[2026-04-17 15:31:08,544] ERROR core.views 500 Internal Server Error at /nonexistent/
+NoneType: None
+[2026-04-17 15:31:08,559] ERROR core.views 500 Internal Server Error at /broken/
+NoneType: None
+[2026-04-17 15:32:17,586] ERROR core.views 500 Internal Server Error at /broken/
+NoneType: None
+[2026-04-18 12:58:18,983] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 12:58:18,985] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 12:58:25,069] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 12:58:25,071] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 12:58:25,072] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 12:58:25,074] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:04:40,200] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:04:40,200] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:04:40,204] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:04:40,204] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:07:21,730] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:07:21,732] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:07:21,732] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:07:21,732] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:07:39,814] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:07:39,819] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:19:19,591] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:19:19,593] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:22:19,650] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 13:22:19,653] ERROR django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+[2026-04-18 19:12:00,057] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:00,139] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:00,161] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:00,197] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:00,215] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:00,746] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:00,781] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:00,885] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:00,886] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:16,508] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:12:25,608] INFO django.server "GET / HTTP/1.1" 200 31043
+[2026-04-18 19:12:36,838] INFO django.server "GET /donations/ HTTP/1.1" 200 23234
+[2026-04-18 19:18:20,376] INFO django.server "POST /donations/ HTTP/1.1" 302 0
+[2026-04-18 19:18:20,988] INFO django.server "GET /donations/39/pay/ HTTP/1.1" 200 13556
+[2026-04-18 19:21:32,556] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:22:05,514] INFO django.server "GET /donations/ HTTP/1.1" 200 23234
+[2026-04-18 19:22:06,173] INFO django.server "GET /static/js/main.js HTTP/1.1" 200 9491
+[2026-04-18 19:22:06,176] INFO django.server "GET /static/css/style.css HTTP/1.1" 200 64981
+[2026-04-18 19:22:06,380] WARNING django.request Not Found: /favicon.ico
+[2026-04-18 19:22:06,380] WARNING django.server "GET /favicon.ico HTTP/1.1" 404 4535
+[2026-04-18 19:23:29,006] INFO django.server "POST /donations/ HTTP/1.1" 302 0
+[2026-04-18 19:23:29,624] INFO django.server "GET /donations/40/pay/ HTTP/1.1" 200 13563
+[2026-04-18 19:28:12,499] ERROR core.views Failed to send donation receipt for donation #40
+Traceback (most recent call last):
+  File "D:\New folder (3a)\core\email_utils.py", line 37, in send_donation_email
+    msg.send()
+  File "D:\New folder (3a)\venv\lib\site-packages\django\core\mail\message.py", line 299, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "D:\New folder (3a)\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 127, in send_messages
+    new_conn_created = self.open()
+  File "D:\New folder (3a)\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 94, in open
+    self.connection.login(self.username, self.password)
+  File "C:\Users\502970\AppData\Local\Programs\Python\Python39\lib\smtplib.py", line 734, in login
+    raise last_exception
+  File "C:\Users\502970\AppData\Local\Programs\Python\Python39\lib\smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "C:\Users\502970\AppData\Local\Programs\Python\Python39\lib\smtplib.py", line 646, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2b5fa9ff734sm48812035ad.10 - gsmtp')
+[2026-04-18 19:28:12,518] INFO django.server "POST /donations/40/verify/ HTTP/1.1" 302 0
+[2026-04-18 19:28:12,556] INFO django.server "GET /payment-success/ HTTP/1.1" 200 12561
+[2026-04-18 19:29:09,288] INFO django.server "GET / HTTP/1.1" 200 31043
+[2026-04-18 19:29:16,404] INFO django.server "GET /donations/ HTTP/1.1" 200 23234
+[2026-04-18 19:29:49,034] INFO django.server "POST /donations/ HTTP/1.1" 302 0
+[2026-04-18 19:29:49,238] INFO django.server "GET /donations/41/pay/ HTTP/1.1" 200 13538
+[2026-04-18 19:32:50,783] INFO django.server "GET / HTTP/1.1" 200 31043
+[2026-04-18 19:33:09,498] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:09,529] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:09,550] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:09,650] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:09,658] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:09,963] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:10,123] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:10,223] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:10,223] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:10,287] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:10,344] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:33:10,579] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:10,596] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:10,612] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:10,616] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:10,624] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:10,938] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:11,111] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:11,420] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:11,424] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:11,442] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:33:11,470] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:34:28,111] INFO django.server "GET /donations/ HTTP/1.1" 200 23234
+[2026-04-18 19:35:37,130] INFO django.server "POST /donations/ HTTP/1.1" 302 0
+[2026-04-18 19:35:37,718] INFO django.server "GET /donations/42/pay/ HTTP/1.1" 200 13287
+[2026-04-18 19:39:37,326] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:37,589] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:37,593] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:37,654] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:37,657] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:37,808] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:38,052] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:38,112] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:38,316] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:38,348] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:38,356] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:38,381] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:38,402] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:38,412] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:38,424] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:38,445] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 19:39:38,500] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:38,746] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:39,002] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:39,086] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:39,088] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:39:39,099] INFO django.utils.autoreload Watching for file changes with StatReloader
+[2026-04-18 19:41:02,795] INFO django.server "GET /donations/ HTTP/1.1" 200 23234
+[2026-04-18 19:41:58,616] INFO django.server "POST /donations/ HTTP/1.1" 302 0
+[2026-04-18 19:41:59,152] INFO django.server "GET /donations/43/pay/ HTTP/1.1" 200 12920
+[2026-04-18 19:45:50,794] ERROR core.views Failed to send donation receipt for donation #43
+Traceback (most recent call last):
+  File "D:\New folder (3a)\core\email_utils.py", line 37, in send_donation_email
+    msg.send()
+  File "D:\New folder (3a)\venv\lib\site-packages\django\core\mail\message.py", line 299, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "D:\New folder (3a)\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 127, in send_messages
+    new_conn_created = self.open()
+  File "D:\New folder (3a)\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 94, in open
+    self.connection.login(self.username, self.password)
+  File "C:\Users\502970\AppData\Local\Programs\Python\Python39\lib\smtplib.py", line 734, in login
+    raise last_exception
+  File "C:\Users\502970\AppData\Local\Programs\Python\Python39\lib\smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "C:\Users\502970\AppData\Local\Programs\Python\Python39\lib\smtplib.py", line 646, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82f932daa68sm4566649b3a.49 - gsmtp')
+[2026-04-18 19:45:50,810] INFO django.server "POST /donations/43/verify/ HTTP/1.1" 302 0
+[2026-04-18 19:45:50,826] INFO django.server "GET /payment-success/ HTTP/1.1" 200 12562

@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Events" %}{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="/" style="color:rgba(255,255,255,.5);">{% trans "Home" %}</a></li>
+        <li class="breadcrumb-item active">{% trans "Events" %}</li>
+      </ol>
+    </nav>
+    <h1>{% trans "Festivals & Rituals" %}</h1>
+    <p>{% trans "Celebrate the divine through sacred rituals, holy festivals, and joyful community gatherings at Sri Kalyana Venkateswara Swamy Kshetram." %}</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     UPCOMING EVENTS
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "Calendar 2025–26" %}</span>
+      <h2>{% trans "Upcoming Festivals" %}</h2>
+      <div class="divider"></div>
+      <p>{% trans "Mark your calendar and join us for these auspicious occasions at our kshetram." %}</p>
+    </div>
+
+    <div class="row g-4">
+
+      {% for ev in events_list %}
+      <div class="col-lg-4 col-md-6 reveal {% cycle 'd1' 'd2' 'd3' %}">
+        <div class="event-card">
+          <div class="ec-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/nadamandapa-interior.jpg"
+                 alt="{{ ev.title }}" loading="lazy">
+            <div class="ec-date">
+              <span class="day">{{ ev.start_date|date:"d" }}</span>
+              <span class="mon">{{ ev.start_date|date:"M" }}</span>
+            </div>
+          </div>
+          <div class="ec-body">
+            <div class="ec-tag">{% trans "Festival" %}</div>
+            <h4 class="ec-title">{{ ev.title }}</h4>
+            {% if ev.description %}
+            <p style="font-size:.84rem;color:var(--text-muted);line-height:1.75;margin-bottom:10px;">
+              {{ ev.description|truncatewords:20 }}
+            </p>
+            {% endif %}
+            <div class="ec-meta">
+              {% if ev.location %}
+              <span><i class="fas fa-map-marker-alt"></i> {{ ev.location }}</span>
+              {% endif %}
+              {% if ev.end_date and ev.end_date != ev.start_date %}
+              <span><i class="fas fa-calendar-alt"></i> {{ ev.start_date }} – {{ ev.end_date }}</span>
+              {% endif %}
+              <span><i class="fas fa-users"></i> {% trans "Open to all devotees" %}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12 text-center py-5">
+        <p style="color:var(--text-muted);">{% trans "No upcoming events at the moment. Check back soon!" %}</p>
+      </div>
+      {% endfor %}
+
+    </div><!-- /row -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAST EVENTS
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py bg-off-white">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "Memories" %}</span>
+      <h2>{% trans "Past Events" %}</h2>
+      <div class="divider"></div>
+      <p>{% trans "A glimpse of the sacred celebrations we have had the joy of sharing with our devotees." %}</p>
+    </div>
+
+    <div class="row g-3">
+
+      <div class="col-lg-6 reveal d1">
+        <div class="past-card">
+          <div class="pc-thumb">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/nadamandapa-interior.jpg" alt="Kumbhabhishekam">
+          </div>
+          <div class="pc-body">
+            <div class="pc-tag">Sacred Consecration</div>
+            <div class="pc-title">Temple Kumbhabhishekam — January 31st</div>
+            <div class="pc-date"><i class="fas fa-calendar-alt me-1"></i> Performed by Sri Ganapathi Sachidananda Swamiji &amp; Sri Datta Vijayananda Theertha Swamiji</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 reveal d2">
+        <div class="past-card">
+          <div class="pc-thumb">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/dattatreya-nirajanam.jpg" alt="Angastami Veatham">
+          </div>
+          <div class="pc-body">
+            <div class="pc-tag">Festival</div>
+            <div class="pc-title">Angastami Veatham — Lord Dattatreya</div>
+            <div class="pc-date"><i class="fas fa-calendar-alt me-1"></i> Sacred festival honouring Sri Angadathatreya Swamy · Thousands of devotees attended</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 reveal d3">
+        <div class="past-card">
+          <div class="pc-thumb">
+            <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/502/502_5e6da55ae891b81e.jpg" alt="Annadanam Seva">
+          </div>
+          <div class="pc-body">
+            <div class="pc-tag">Annadanam</div>
+            <div class="pc-title">Friday Annadanam Seva — 8 Years Milestone</div>
+            <div class="pc-date"><i class="fas fa-calendar-alt me-1"></i> Celebrating 8+ continuous years of Friday Annadanam by divine grace of Goddess Annapurna</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 reveal d4">
+        <div class="past-card">
+          <div class="pc-thumb">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/hanuman-temple.jpeg" alt="Hanuman Chalisa">
+          </div>
+          <div class="pc-body">
+            <div class="pc-tag">Devotional</div>
+            <div class="pc-title">Hanuman Chalisa Mass Recitation</div>
+            <div class="pc-date"><i class="fas fa-calendar-alt me-1"></i> Group chanting of Hanuman Chalisa at Sri Abhaya Anjaneya Swamy Shrine</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 reveal d1">
+        <div class="past-card">
+          <div class="pc-thumb">
+            <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/527/527_398025271699adef.jpg" alt="Datta Deeksha">
+          </div>
+          <div class="pc-body">
+            <div class="pc-tag">Community</div>
+            <div class="pc-title">Datta Deeksha — Rice Collection Drive</div>
+            <div class="pc-date"><i class="fas fa-calendar-alt me-1"></i> 20+ years · 10+ villages · Donated to Mysore Dattapitam for Annadanam</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 reveal d2">
+        <div class="past-card">
+          <div class="pc-thumb">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/VanaDurga-6844fff7339bd.png" alt="Temple Foundation Day">
+          </div>
+          <div class="pc-body">
+            <div class="pc-tag">Celebration</div>
+            <div class="pc-title">Temple Foundation Day — 28th Anniversary</div>
+            <div class="pc-date"><i class="fas fa-calendar-alt me-1"></i> Commemorating 28 years since the divine blessings of 1996 · Parchur</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     COUNTER
+═══════════════════════════════════════════════════════════ -->
+<section class="counter-bar">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="8" data-suffix="+">8+</span>
+        <span class="ctr-lbl">{% trans "Temple Festivals" %}</span>
+      </div>
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="20000" data-suffix="+">20,000+</span>
+        <span class="ctr-lbl">{% trans "Festival Visitors" %}</span>
+      </div>
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="28" data-suffix="+">28+</span>
+        <span class="ctr-lbl">{% trans "Years of Celebrations" %}</span>
+      </div>
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="100" data-suffix="+">100+</span>
+        <span class="ctr-lbl">{% trans "Volunteers" %}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,225 @@
+{% extends 'adminpanel/base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block topbar_title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<!-- Stat Cards -->
+<div class="row g-3 mb-4">
+  <div class="col-sm-6 col-xl-3">
+    <div class="stat-card c-orange">
+      <div class="stat-icon orange"><i class="fas fa-heart"></i></div>
+      <div>
+        <div class="stat-num">{{ total_donations }}</div>
+        <div class="stat-lbl">Total Donations</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-xl-3">
+    <div class="stat-card c-green">
+      <div class="stat-icon green"><i class="fas fa-indian-rupee-sign"></i></div>
+      <div>
+        <div class="stat-num">₹{{ donations_amount|floatformat:0 }}</div>
+        <div class="stat-lbl">Amount Collected</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-xl-3">
+    <div class="stat-card c-blue">
+      <div class="stat-icon blue"><i class="fas fa-hands-praying"></i></div>
+      <div>
+        <div class="stat-num">{{ total_seva }}</div>
+        <div class="stat-lbl">Seva Bookings</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-xl-3">
+    <div class="stat-card c-purple">
+      <div class="stat-icon purple"><i class="fas fa-calendar-alt"></i></div>
+      <div>
+        <div class="stat-num">{{ total_events }}</div>
+        <div class="stat-lbl">Total Events</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row g-3 mb-4">
+
+  <!-- Donut: Donations by Status -->
+  <div class="col-lg-5">
+    <div class="chart-card h-100">
+      <div class="chart-card-header">
+        <h6><i class="fas fa-chart-pie me-2" style="color:#ff7a00;"></i>Donations by Status</h6>
+        <span class="chart-badge">{{ total_donations }} total</span>
+      </div>
+      <div class="chart-card-body d-flex align-items-center justify-content-center" style="min-height:260px;">
+        {% if total_donations > 0 %}
+        <canvas id="donationDonut" style="max-width:230px;max-height:230px;"></canvas>
+        {% else %}
+        <div class="text-center text-muted py-5">
+          <i class="fas fa-chart-pie fa-3x mb-3 d-block" style="opacity:.15;"></i>
+          <span style="font-size:.82rem;">No donations recorded yet</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Bar: Payments by Method -->
+  <div class="col-lg-7">
+    <div class="chart-card h-100">
+      <div class="chart-card-header">
+        <h6><i class="fas fa-chart-bar me-2" style="color:#3b82f6;"></i>Payments by Method</h6>
+        <span class="chart-badge">₹{{ payments_amount|floatformat:0 }} total</span>
+      </div>
+      <div class="chart-card-body d-flex align-items-center" style="min-height:260px;">
+        {% if total_payments > 0 %}
+        <canvas id="paymentBar" style="width:100%;max-height:230px;"></canvas>
+        {% else %}
+        <div class="text-center text-muted py-5 w-100">
+          <i class="fas fa-chart-bar fa-3x mb-3 d-block" style="opacity:.15;"></i>
+          <span style="font-size:.82rem;">No payment data yet</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Recent Activity -->
+<div class="row g-3">
+
+  <!-- Recent Donations -->
+  <div class="col-lg-7">
+    <div class="ap-table">
+      <div class="ap-table-header">
+        <h6><i class="fas fa-clock me-2" style="color:#9ca3af;font-size:.8rem;"></i>Recent Donations</h6>
+        <a href="{% url 'ap:donations_list' %}" class="btn-ap btn-ap-sm">View All</a>
+      </div>
+      <table class="table table-hover mb-0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Purpose</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for d in recent_donations %}
+          <tr>
+            <td class="fw-500">{{ d.name }}</td>
+            <td><strong>₹{{ d.amount }}</strong></td>
+            <td class="text-muted">{{ d.purpose|default:"—" }}</td>
+            <td><span class="status-badge {{ d.status }}">{{ d.get_status_display }}</span></td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="4" class="text-center text-muted py-4" style="font-size:.83rem;">No donations yet</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Upcoming Events -->
+  <div class="col-lg-5">
+    <div class="ap-table">
+      <div class="ap-table-header">
+        <h6><i class="fas fa-calendar me-2" style="color:#9ca3af;font-size:.8rem;"></i>Upcoming Events</h6>
+        <a href="{% url 'ap:events_list' %}" class="btn-ap btn-ap-sm">View All</a>
+      </div>
+      <table class="table table-hover mb-0">
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for e in upcoming_events %}
+          <tr>
+            <td class="fw-500">{{ e.title }}</td>
+            <td class="text-muted" style="font-size:.8rem;white-space:nowrap;">{{ e.start_date }}</td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="2" class="text-center text-muted py-4" style="font-size:.83rem;">No upcoming events</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{% if total_donations > 0 %}
+<script>
+new Chart(document.getElementById('donationDonut'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Completed', 'Pending', 'Failed'],
+    datasets: [{
+      data: [{{ don_completed }}, {{ don_pending }}, {{ don_failed }}],
+      backgroundColor: ['#10b981', '#f59e0b', '#ef4444'],
+      borderWidth: 0,
+      hoverOffset: 10,
+    }]
+  },
+  options: {
+    cutout: '68%',
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { padding: 18, font: { size: 12, family: 'Poppins' }, usePointStyle: true, pointStyleWidth: 10 }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => {
+            const pct = {{ total_donations }} ? Math.round(ctx.parsed / {{ total_donations }} * 100) : 0;
+            return `  ${ctx.label}: ${ctx.parsed}  (${pct}%)`;
+          }
+        }
+      }
+    }
+  }
+});
+</script>
+{% endif %}
+
+{% if total_payments > 0 %}
+<script>
+new Chart(document.getElementById('paymentBar'), {
+  type: 'bar',
+  data: {
+    labels: {{ pm_labels_json|safe }},
+    datasets: [{
+      label: 'Amount (₹)',
+      data: {{ pm_amounts_json|safe }},
+      backgroundColor: ['#ff7a00','#ff9533','#ffb366','#ffcc99','#ffe5cc'],
+      borderRadius: 8,
+      borderSkipped: false,
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: '#f3f4f6' },
+        border: { dash: [4, 4] },
+        ticks: { font: { size: 11, family: 'Poppins' }, callback: v => '₹' + v.toLocaleString('en-IN') }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 11, family: 'Poppins' } }
+      }
+    }
+  }
+});
+</script>
+{% endif %}
+{% endblock %}

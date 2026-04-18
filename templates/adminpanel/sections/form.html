@@ -1,0 +1,157 @@
+{% extends 'adminpanel/base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block topbar_title %}{{ title }}{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.css">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-8">
+
+    <div class="page-header">
+      <div>
+        <h4>{{ title }}</h4>
+        <p>Rich text, image upload, and ordering for each content block</p>
+      </div>
+      <a href="{% url 'ap:sections_list' %}" class="btn btn-outline-secondary btn-sm">
+        <i class="fas fa-arrow-left me-1"></i> Back
+      </a>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <!-- Basic info -->
+      <div class="form-card mb-3">
+        <h6 class="fw-700 mb-3" style="font-size:.87rem;">Section Identity</h6>
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <label class="form-label">Page Slug <span class="text-danger">*</span></label>
+            {{ form.page_slug }}
+            <div class="text-muted mt-1" style="font-size:.73rem;">e.g. <code>home</code>, <code>about</code>, <code>contact</code></div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Section Key <span class="text-danger">*</span></label>
+            {{ form.section_key }}
+          </div>
+
+          <div class="col-md-8">
+            <label class="form-label">Title</label>
+            {{ form.title }}
+          </div>
+
+          <div class="col-md-2">
+            <label class="form-label">Order</label>
+            {{ form.order }}
+          </div>
+
+          <div class="col-md-2 d-flex align-items-end pb-1">
+            <div class="form-check">
+              {{ form.is_active }}
+              <label class="form-check-label" style="font-size:.83rem;">Active</label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="form-card mb-3">
+        <h6 class="fw-700 mb-3" style="font-size:.87rem;">Content</h6>
+        <label class="form-label">Rich Text Content</label>
+        {{ form.content }}
+        <div class="text-muted mt-1" style="font-size:.73rem;">
+          Supports HTML via the rich text editor. Use the <code>|safe</code> filter in frontend templates to render HTML content.
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="form-card mb-3">
+        <h6 class="fw-700 mb-3" style="font-size:.87rem;">Image</h6>
+
+        {% if obj and obj.image %}
+        <div class="mb-3">
+          <label class="form-label">Current Image</label>
+          <div>
+            <img src="{{ obj.image.url }}" alt="{{ obj.image_alt }}"
+                 style="max-width:320px;max-height:200px;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;">
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="row g-3">
+          <div class="col-md-8">
+            <label class="form-label">Upload Image</label>
+            {{ form.image }}
+            <div class="text-muted mt-1" style="font-size:.73rem;">
+              Recommended:
+              {% if obj %}{{ obj.image_size_hint }}{% else %}Hero: 1920×800, Cards: 400×300{% endif %}
+              — JPG, PNG, WebP
+            </div>
+          </div>
+          <div class="col-md-4" id="img-preview-wrap" style="display:none;">
+            <label class="form-label">Preview</label>
+            <img id="img-preview" src="#" alt="preview"
+                 style="max-width:100%;border-radius:8px;border:1px solid #e5e7eb;object-fit:cover;">
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <label class="form-label">Image Alt Text</label>
+          {{ form.image_alt }}
+        </div>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn-ap btn">
+          <i class="fas fa-save me-1"></i> Save Section
+        </button>
+        <a href="{% url 'ap:sections_list' %}" class="btn btn-outline-secondary">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+<script>
+ClassicEditor.create(document.querySelector('#id_section_content'), {
+  toolbar: {
+    items: [
+      'heading', '|',
+      'bold', 'italic', 'underline', '|',
+      'bulletedList', 'numberedList', '|',
+      'link', 'blockQuote', '|',
+      'undo', 'redo'
+    ]
+  },
+  heading: {
+    options: [
+      { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+      { model: 'heading2',  view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+      { model: 'heading3',  view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+    ]
+  }
+}).catch(err => console.error(err));
+
+// Image preview before upload
+document.querySelector('[name="image"]').addEventListener('change', function () {
+  const file = this.files[0];
+  if (!file) return;
+  const wrap = document.getElementById('img-preview-wrap');
+  const img  = document.getElementById('img-preview');
+  const reader = new FileReader();
+  reader.onload = e => {
+    img.src = e.target.result;
+    wrap.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+});
+</script>
+{% endblock %}

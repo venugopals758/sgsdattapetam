@@ -1,0 +1,633 @@
+# Telugu translations for Sri Kalyana Venkateswara Swamy Kshetram website
+# Copyright (C) 2025
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: te\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# ── Navigation ──────────────────────────────────────────────
+msgid "Home"
+msgstr "హోమ్"
+
+msgid "Donations"
+msgstr "దానాలు"
+
+msgid "Seva"
+msgstr "సేవ"
+
+msgid "Events"
+msgstr "ఉత్సవాలు"
+
+msgid "About"
+msgstr "మా గురించి"
+
+msgid "Contact"
+msgstr "సంప్రదించండి"
+
+msgid "Donate"
+msgstr "దానం"
+
+msgid "About Us"
+msgstr "మా గురించి"
+
+# ── Footer ───────────────────────────────────────────────────
+msgid "A sacred abode of peace and devotion. We uphold ancient traditions while welcoming all seekers on their spiritual journey."
+msgstr "శాంతి మరియు భక్తి యొక్క పవిత్ర నివాసం. ఆధ్యాత్మిక పయనంలో ఉన్న అందరినీ స్వాగతిస్తూ మేము పురాతన సంప్రదాయాలను కాపాడుతున్నాము."
+
+msgid "Quick Links"
+msgstr "శీఘ్ర లింక్లు"
+
+msgid "Services"
+msgstr "సేవలు"
+
+msgid "Get in Touch"
+msgstr "సంప్రదించండి"
+
+msgid "Archana"
+msgstr "అర్చన"
+
+msgid "Abhishekam"
+msgstr "అభిషేకం"
+
+msgid "Annadanam"
+msgstr "అన్నదానం"
+
+msgid "Go Seva"
+msgstr "గో సేవ"
+
+msgid "Pranadana"
+msgstr "ప్రాణదాన"
+
+msgid "Festivals"
+msgstr "ఉత్సవాలు"
+
+msgid "Open Daily"
+msgstr "రోజూ తెరిచి ఉంటుంది"
+
+msgid "All rights reserved."
+msgstr "అన్ని హక్కులు రిజర్వు చేయబడ్డాయి."
+
+msgid "Crafted with"
+msgstr "ప్రేమతో నిర్మించబడినది"
+
+msgid "Privacy Policy"
+msgstr "గోప్యతా విధానం"
+
+msgid "Terms of Service"
+msgstr "సేవా నిబంధనలు"
+
+# ── Hero Section ─────────────────────────────────────────────
+msgid "Welcome to"
+msgstr "స్వాగతం"
+
+msgid "A sacred abode in Parchur, blessed by the divine grace of Sri Sri Ganapathi Sachidananda Swamiji. Serving devotees through daily worship, Annadanam, and selfless community seva since 1996."
+msgstr "శ్రీ శ్రీ గణపతి సచ్చిదానంద స్వామిజీ దివ్య అనుగ్రహంతో ఆశీర్వదించబడిన పార్చూర్‌లోని పవిత్ర నివాసం. 1996 నుండి నిత్య పూజలు, అన్నదానం మరియు నిస్వార్థ సేవతో భక్తులను సేవిస్తున్నాం."
+
+msgid "Donate Now"
+msgstr "దానం చేయండి"
+
+msgid "Book Seva"
+msgstr "సేవ బుక్ చేయండి"
+
+msgid "Devotees"
+msgstr "భక్తులు"
+
+msgid "Years"
+msgstr "సంవత్సరాలు"
+
+msgid "Deities"
+msgstr "దేవతలు"
+
+msgid "Days Open"
+msgstr "రోజులు తెరిచి"
+
+msgid "Next Pooja"
+msgstr "తదుపరి పూజ"
+
+msgid "Friday Annadanam"
+msgstr "శుక్రవారం అన్నదానం"
+
+msgid "Free meals · 8+ years of seva"
+msgstr "ఉచిత భోజనం · 8+ సంవత్సరాల సేవ"
+
+msgid "Scroll"
+msgstr "క్రిందికి వెళ్ళండి"
+
+# ── Feature Bar ──────────────────────────────────────────────
+msgid "Daily Rituals"
+msgstr "నిత్య పూజలు"
+
+msgid "Morning 6 AM · Evening 6 PM"
+msgstr "ఉదయం 6 గంటలు · సాయంత్రం 6 గంటలు"
+
+msgid "Every Friday · 8+ Years"
+msgstr "ప్రతి శుక్రవారం · 8+ సంవత్సరాలు"
+
+msgid "Special Sevas"
+msgstr "ప్రత్యేక సేవలు"
+
+msgid "Book in-person or via phone"
+msgstr "స్వయంగా లేదా ఫోన్ ద్వారా బుక్ చేయండి"
+
+msgid "11 Deities"
+msgstr "11 దేవతలు"
+
+msgid "Revered divine abodes"
+msgstr "పవిత్ర దేవతా మందిరాలు"
+
+# ── Featured Seva ────────────────────────────────────────────
+msgid "Sacred Services"
+msgstr "పవిత్ర సేవలు"
+
+msgid "Featured Seva"
+msgstr "ప్రత్యేక సేవ"
+
+msgid "Participate in divine rituals and earn blessings for you and your family."
+msgstr "దివ్య పూజలలో పాల్గొని మీకు మరియు మీ కుటుంబానికి ఆశీర్వాదాలు పొందండి."
+
+msgid "Popular"
+msgstr "ప్రజాదరణ పొందిన"
+
+msgid "Special"
+msgstr "ప్రత్యేక"
+
+msgid "A sacred bathing of the Shiva Linga with milk, honey, and holy water — invoking Lord Shiva's blessings."
+msgstr "శివలింగాన్ని పాలు, తేనె మరియు పవిత్ర జలంతో అభిషేకించే పవిత్ర సేవ — శివుడి ఆశీర్వాదాలను ఆహ్వానించడం."
+
+msgid "Recitation of 1000 sacred names of the deity with flower offerings and devotional chanting."
+msgstr "దేవత యొక్క 1000 పవిత్ర నామాలను పూల అర్పణలతో భక్తిపూర్వకంగా పఠించే సేవ."
+
+msgid "Sacred fire ritual dedicated to Lord Ganesha to remove obstacles and bring prosperity and success."
+msgstr "అడ్డంకులను తొలగించి శ్రేయస్సు మరియు విజయాన్ని అందించడానికి శ్రీ గణేశునికి అంకితమైన పవిత్ర హోమం."
+
+msgid "Annadanam Seva"
+msgstr "అన్నదాన సేవ"
+
+msgid "Sponsor Friday Annadanam — nourishing devotees and the needy. A noble act of compassion in service of all."
+msgstr "శుక్రవారం అన్నదానానికి స్పాన్సర్ అవ్వండి — భక్తులకు మరియు అభాగ్యులకు ఆహారం అందించండి. అందరికీ సేవలో ఒక మహోన్నత దయా కార్యం."
+
+msgid "Book Now"
+msgstr "ఇప్పుడు బుక్ చేయండి"
+
+msgid "View All Sevas"
+msgstr "అన్ని సేవలు చూడండి"
+
+# ── Counter Bar ───────────────────────────────────────────────
+msgid "Devotees Blessed"
+msgstr "ఆశీర్వదించిన భక్తులు"
+
+msgid "Years of Service"
+msgstr "సేవ సంవత్సరాలు"
+
+msgid "Villages Reached"
+msgstr "అందిన గ్రామాలు"
+
+msgid "Years of Annadanam"
+msgstr "అన్నదానం సంవత్సరాలు"
+
+# ── Events Section ────────────────────────────────────────────
+msgid "What's Happening"
+msgstr "జరుగుతున్నవి"
+
+msgid "Upcoming Festivals"
+msgstr "రాబోయే ఉత్సవాలు"
+
+msgid "Join us in celebrating sacred festivals and divine rituals at Sri Kalyana Venkateswara Swamy Kshetram."
+msgstr "శ్రీ కళ్యాణ వేంకటేశ్వర స్వామి క్షేత్రంలో పవిత్ర ఉత్సవాలు మరియు దివ్య పూజలలో మాతో పాటు పాల్గొనండి."
+
+msgid "Ritual"
+msgstr "పూజ"
+
+msgid "Celebration"
+msgstr "వేడుక"
+
+msgid "Spiritual"
+msgstr "ఆధ్యాత్మిక"
+
+msgid "Homam"
+msgstr "హోమం"
+
+msgid "Pooja"
+msgstr "పూజ"
+
+msgid "Open to all devotees"
+msgstr "అందరు భక్తులకు స్వాగతం"
+
+msgid "Sponsorship available"
+msgstr "స్పాన్సర్‌షిప్ అందుబాటులో ఉంది"
+
+msgid "Open for sponsorship"
+msgstr "స్పాన్సర్‌షిప్ కోసం తెరిచి ఉంది"
+
+msgid "View All Events"
+msgstr "అన్ని ఉత్సవాలు చూడండి"
+
+msgid "Sacred ritual honouring Lord Shiva with abhishekam, bilva archana, and Vedic chanting."
+msgstr "శివునికి అభిషేకం, బిల్వార్చన మరియు వేద మంత్రోచ్చారణతో నిర్వహించే పవిత్ర పూజ."
+
+msgid "Joyous divine wedding ceremony of Lord Venkateswara with Sridevi and Bhudevi. A grand celebration for all devotees."
+msgstr "శ్రీదేవి మరియు భూదేవితో వేంకటేశ్వర స్వామి కళ్యాణోత్సవం — అందరు భక్తులకు ఒక మహోత్సవం."
+
+msgid "Sacred group recitation of the Bhagavad Gita with devotional singing and spiritual discourse."
+msgstr "భక్తిగానం మరియు ఆధ్యాత్మిక ప్రవచనంతో భగవద్గీత సమూహ పారాయణం."
+
+# ── About Preview ─────────────────────────────────────────────
+msgid "Our Sacred Story"
+msgstr "మా పవిత్ర చరిత్ర"
+
+msgid "A Temple Rooted in"
+msgstr "దివ్య ఆశీర్వాదాలలో"
+
+msgid "Divine Blessings & Seva"
+msgstr "నాటిన ఒక మందిరం"
+
+msgid "Founded in 1996 with the divine blessings of Sri Sri Ganapathi Sachidananda Swamiji, the temple began on a humble 3 cents of land gifted by devoted followers. Today it stands proudly on nearly 100 cents — a testament to unwavering faith."
+msgstr "1996లో శ్రీ శ్రీ గణపతి సచ్చిదానంద స్వామిజీ దివ్య ఆశీర్వాదాలతో స్థాపించబడిన ఈ మందిరం, భక్తులు దానం చేసిన 3 సెంట్ల భూమిలో ప్రారంభమైంది. నేడు దాదాపు 100 సెంట్లలో ఘనంగా నిలబడి అచంచలమైన విశ్వాసానికి నిదర్శనంగా ఉంది."
+
+msgid "Officially known as Sri Kalyana Venkateswara Swami Sametha Asta Lakshmi Devalayam, our kshetram houses 11 revered deities and serves thousands of devotees through daily rituals, Friday Annadanam, and the Datta Deeksha programme."
+msgstr "అధికారికంగా శ్రీ కళ్యాణ వేంకటేశ్వర స్వామి సమేత అష్ట లక్ష్మీ దేవాలయం అని పిలువబడే మా క్షేత్రంలో 11 పూజనీయ దేవతలు ఉన్నారు. నిత్య పూజలు, శుక్రవారం అన్నదానం మరియు దత్త దీక్ష కార్యక్రమం ద్వారా వేలాది భక్తులకు సేవ చేయబడుతున్నది."
+
+msgid "11 Revered Deities"
+msgstr "11 పూజనీయ దేవతలు"
+
+msgid "Friday Annadanam — 8+ Years"
+msgstr "శుక్రవారం అన్నదానం — 8+ సంవత్సరాలు"
+
+msgid "Datta Deeksha — 10+ Villages"
+msgstr "దత్త దీక్ష — 10+ గ్రామాలు"
+
+msgid "Go Seva — Goshallaa"
+msgstr "గో సేవ — గోశాల"
+
+msgid "Annapurna Mandiram"
+msgstr "అన్నపూర్ణ మందిరం"
+
+msgid "Guru Nilayam Shrine"
+msgstr "గురు నిలయం"
+
+msgid "Learn More About Us"
+msgstr "మా గురించి మరింత తెలుసుకోండి"
+
+msgid "Years of"
+msgstr "సంవత్సరాల"
+
+msgid "Devotion"
+msgstr "భక్తి"
+
+# ── Quote ─────────────────────────────────────────────────────
+msgid "Where devotion is pure, the Divine is near. Serve, pray, and surrender — the Lord's grace flows abundantly."
+msgstr "భక్తి నిర్మలంగా ఉన్న చోట, దైవం సమీపంగా ఉంటుంది. సేవించండి, ప్రార్థించండి, శరణు వేడండి — ప్రభువు అనుగ్రహం నిండుగా ప్రవహిస్తుంది."
+
+# ── Testimonials ──────────────────────────────────────────────
+msgid "Devotee Stories"
+msgstr "భక్తుల అనుభవాలు"
+
+msgid "Words of Gratitude"
+msgstr "కృతజ్ఞతా మాటలు"
+
+msgid "Visiting Sri Kalyana Venkateswara Swamy Kshetram fills my heart with peace. The divine atmosphere and the priests' devotion make every visit truly spiritual."
+msgstr "శ్రీ కళ్యాణ వేంకటేశ్వర స్వామి క్షేత్రాన్ని సందర్శించడం నా హృదయాన్ని శాంతితో నింపుతుంది. దివ్య వాతావరణం మరియు అర్చకుల భక్తి ప్రతి సందర్శనను నిజంగా ఆధ్యాత్మికంగా చేస్తాయి."
+
+msgid "Devotee since 2008"
+msgstr "2008 నుండి భక్తురాలు"
+
+msgid "The Friday Annadanam here is a beautiful tradition. For over 8 years, selfless devotees have served food to all — this is true compassion in action."
+msgstr "ఇక్కడ శుక్రవారం అన్నదానం ఒక అందమైన సంప్రదాయం. 8 సంవత్సరాలకు పైగా నిస్వార్థ భక్తులు అందరికీ ఆహారం అందిస్తున్నారు — ఇది నిజమైన కరుణ యొక్క ప్రత్యక్ష ఆచరణ."
+
+msgid "Volunteer, 10 years"
+msgstr "స్వచ్ఛంద సేవకుడు, 10 సంవత్సరాలు"
+
+msgid "I attended the Venkateswara Swami Kalyanam — the rituals, the chanting, the divine energy — it was an experience beyond words. This kshetram is truly blessed."
+msgstr "నేను వేంకటేశ్వర స్వామి కళ్యాణానికి హాజరయ్యాను — పూజలు, మంత్రోచ్చారణ, దివ్య శక్తి — ఇది మాటలకు అందని అనుభవం. ఈ క్షేత్రం నిజంగా ఆశీర్వదించబడింది."
+
+msgid "Regular devotee"
+msgstr "నిత్య భక్తురాలు"
+
+# ── CTA Strip ─────────────────────────────────────────────────
+msgid "Support Our Sacred Mission"
+msgstr "మా పవిత్ర లక్ష్యాన్ని ఆదరించండి"
+
+msgid "Your contribution helps us continue Friday Annadanam, maintain 11 divine shrines, and serve devotees across Parchur and beyond every single day."
+msgstr "మీ సహాయం మాకు శుక్రవారం అన్నదానాన్ని కొనసాగించడానికి, 11 దివ్య మందిరాలను నిర్వహించడానికి మరియు పార్చూర్ మరియు అంతటా రోజూ భక్తులకు సేవ చేయడానికి సహాయపడుతుంది."
+
+msgid "Donate Today"
+msgstr "ఈరోజు దానం చేయండి"
+
+msgid "Contact Us"
+msgstr "సంప్రదించండి"
+
+# ── About Page ────────────────────────────────────────────────
+msgid "About Us"
+msgstr "మా గురించి"
+
+msgid "About the Temple"
+msgstr "మందిర పరిచయం"
+
+msgid "A living tradition of divine blessings, selfless service, and devotion since 1996 — Parchur, Andhra Pradesh."
+msgstr "1996 నుండి పార్చూర్, ఆంధ్ర ప్రదేశ్‌లో దివ్య ఆశీర్వాదాలు, నిస్వార్థ సేవ మరియు భక్తి యొక్క సజీవ సంప్రదాయం."
+
+msgid "Blessings of Guru & Temple History"
+msgstr "గురు ఆశీర్వాదాలు మరియు మందిర చరిత్ర"
+
+msgid "Built on Divine Grace,"
+msgstr "దివ్య అనుగ్రహంపై నిర్మించబడిన,"
+
+msgid "Sustained by Devotion"
+msgstr "భక్తితో నిలబడిన మందిరం"
+
+msgid "Cents of Temple Land"
+msgstr "మందిర భూమి (సెంట్లు)"
+
+msgid "Revered Deities"
+msgstr "పూజనీయ దేవతలు"
+
+msgid "Divine Abodes"
+msgstr "దివ్య నివాసాలు"
+
+msgid "Our temple complex houses eleven sacred shrines — a rich tapestry of Hindu mythology and spirituality."
+msgstr "మా మందిర సముదాయం పదకొండు పవిత్ర మందిరాలను కలిగి ఉంది — హిందూ పురాణం మరియు ఆధ్యాత్మికత యొక్క సమృద్ధ నేత."
+
+msgid "Seva & Compassion"
+msgstr "సేవ మరియు కరుణ"
+
+msgid "Annadanam & Datta Deeksha"
+msgstr "అన్నదానం మరియు దత్త దీక్ష"
+
+msgid "Feeding the body, nourishing the soul — our most cherished community mission."
+msgstr "శరీరాన్ని పోషించడం, ఆత్మను పోషించడం — మా అత్యంత ప్రియమైన సమాజ లక్ష్యం."
+
+msgid "Our Purpose"
+msgstr "మా లక్ష్యం"
+
+msgid "Vision & Mission"
+msgstr "దర్శనం మరియు లక్ష్యం"
+
+msgid "Our Vision"
+msgstr "మా దృష్టి"
+
+msgid "Our Mission"
+msgstr "మా లక్ష్యం"
+
+msgid "Our Values"
+msgstr "మా విలువలు"
+
+msgid "Dedicated Service"
+msgstr "నిష్టాపూర్వక సేవ"
+
+msgid "Our Devotee Teams"
+msgstr "మా భక్త బృందాలు"
+
+msgid "The heartbeat of our temple — selfless volunteers who make every seva possible."
+msgstr "మా మందిర హృదయస్పందన — ప్రతి సేవను సాధ్యం చేసే నిస్వార్థ సేవకులు."
+
+msgid "Divine Guidance"
+msgstr "దివ్య మార్గదర్శనం"
+
+msgid "Revered Gurus & Leadership"
+msgstr "పూజనీయ గురువులు మరియు నాయకత్వం"
+
+msgid "With deepest reverence, we offer our namaskaras to the lotus feet of our beloved gurus."
+msgstr "అత్యంత భక్తిశ్రద్ధలతో మా ప్రియమైన గురువుల పాదపద్మాలకు మా నమస్కారాలు సమర్పించుచున్నాము."
+
+msgid "A Glimpse"
+msgstr "ఒక సందర్శన"
+
+msgid "Temple Gallery"
+msgstr "మందిర దృశ్యాలు"
+
+# ── Events Page ───────────────────────────────────────────────
+msgid "Festivals & Rituals"
+msgstr "ఉత్సవాలు మరియు పూజలు"
+
+msgid "Celebrate the divine through sacred rituals, holy festivals, and joyful community gatherings at Sri Kalyana Venkateswara Swamy Kshetram."
+msgstr "శ్రీ కళ్యాణ వేంకటేశ్వర స్వామి క్షేత్రంలో పవిత్ర పూజలు, పండుగలు మరియు సమాజ సమ్మేళనాల ద్వారా దివ్యతను జరుపుకోండి."
+
+msgid "Calendar 2025–26"
+msgstr "కాలెండర్ 2025–26"
+
+msgid "Mark your calendar and join us for these auspicious occasions at our kshetram."
+msgstr "మీ కాలెండర్‌లో గుర్తించండి మరియు మా క్షేత్రంలో ఈ శుభ సందర్భాలకు మాతో చేరండి."
+
+msgid "Memories"
+msgstr "జ్ఞాపకాలు"
+
+msgid "Past Events"
+msgstr "గత ఉత్సవాలు"
+
+msgid "A glimpse of the sacred celebrations we have had the joy of sharing with our devotees."
+msgstr "మా భక్తులతో సంతోషంగా పంచుకున్న పవిత్ర ఉత్సవాల ఒక సందర్శన."
+
+msgid "Temple Festivals"
+msgstr "మందిర ఉత్సవాలు"
+
+msgid "Festival Visitors"
+msgstr "ఉత్సవ సందర్శకులు"
+
+msgid "Years of Celebrations"
+msgstr "ఉత్సవ సంవత్సరాలు"
+
+msgid "Volunteers"
+msgstr "స్వచ్ఛంద సేవకులు"
+
+# ── Seva Page ─────────────────────────────────────────────────
+msgid "Book a Seva"
+msgstr "సేవ బుక్ చేయండి"
+
+msgid "Participate in sacred rituals and receive the divine blessings of the presiding deity."
+msgstr "పవిత్ర పూజలలో పాల్గొని అధిష్ఠాన దేవత యొక్క దివ్య ఆశీర్వాదాలు పొందండి."
+
+msgid "Name-based offering"
+msgstr "నామ అర్పణం"
+
+msgid "Sacred bathing ritual"
+msgstr "పవిత్ర అభిషేకం"
+
+msgid "Sacred fire ritual"
+msgstr "పవిత్ర హోమ క్రమం"
+
+msgid "Flower offering"
+msgstr "పుష్పాంజలి"
+
+msgid "Free meal service"
+msgstr "ఉచిత భోజన సేవ"
+
+msgid "All Services"
+msgstr "అన్ని సేవలు"
+
+msgid "Available Sevas"
+msgstr "అందుబాటులో ఉన్న సేవలు"
+
+msgid "Each seva is conducted by experienced priests following traditional Agamic procedures."
+msgstr "ప్రతి సేవ సంప్రదాయ ఆగమ విధానాలను అనుసరించి అనుభవజ్ఞులైన అర్చకులచే నిర్వహించబడుతుంది."
+
+msgid "Most Popular"
+msgstr "అత్యంత జనప్రియమైన"
+
+msgid "Premium"
+msgstr "ప్రీమియం"
+
+msgid "Healing"
+msgstr "ఆరోగ్యప్రదమైన"
+
+msgid "Compassion"
+msgstr "కరుణ"
+
+msgid "Sacred Booking"
+msgstr "పవిత్ర బుకింగ్"
+
+msgid "Book Your Seva"
+msgstr "మీ సేవ బుక్ చేయండి"
+
+msgid "Full Name"
+msgstr "పూర్తి పేరు"
+
+msgid "Mobile Number"
+msgstr "మొబైల్ నంబర్"
+
+msgid "Select Seva"
+msgstr "సేవ ఎంచుకోండి"
+
+msgid "Preferred Date"
+msgstr "ఇష్టమైన తేదీ"
+
+msgid "Gotram / Star (Nakshatra)"
+msgstr "గోత్రం / నక్షత్రం"
+
+msgid "Special Instructions"
+msgstr "ప్రత్యేక సూచనలు"
+
+msgid "Confirm Seva Booking"
+msgstr "సేవ బుకింగ్ నిర్ధారించండి"
+
+msgid "Daily Schedule"
+msgstr "రోజువారీ షెడ్యూల్"
+
+msgid "Pooja Timings"
+msgstr "పూజ సమయాలు"
+
+msgid "Temple Pooja Schedule"
+msgstr "మందిర పూజ షెడ్యూల్"
+
+# ── Donations Page ────────────────────────────────────────────
+msgid "Make a Donation"
+msgstr "దానం చేయండి"
+
+msgid "Every offering, big or small, is a step closer to the Divine and a gift to the community."
+msgstr "ప్రతి అర్పణ, పెద్దదైనా చిన్నదైనా, దైవానికి మరింత దగ్గరగా వేసే అడుగు మరియు సమాజానికి ఒక కానుక."
+
+msgid "Ways to Give"
+msgstr "దానం చేసే మార్గాలు"
+
+msgid "Donation Categories"
+msgstr "దానం వర్గాలు"
+
+msgid "Choose a cause that resonates with your heart. All donations are used transparently for temple activities."
+msgstr "మీ హృదయానికి నచ్చిన కారణాన్ని ఎంచుకోండి. అన్ని దానాలు మందిర కార్యక్రమాల కోసం పారదర్శకంగా వినియోగించబడతాయి."
+
+msgid "Temple Development"
+msgstr "మందిర అభివృద్ధి"
+
+msgid "Vedic Education"
+msgstr "వేద విద్య"
+
+msgid "Festival Sponsorship"
+msgstr "ఉత్సవ స్పాన్సర్‌షిప్"
+
+msgid "Medical Outreach"
+msgstr "వైద్య సేవా కార్యక్రమం"
+
+msgid "Donate Now"
+msgstr "దానం చేయండి"
+
+msgid "Give with Grace"
+msgstr "ఔదార్యంతో ఇవ్వండి"
+
+msgid "Make Your Offering"
+msgstr "మీ అర్పణం చేయండి"
+
+msgid "Fill in your details below. All transactions are secure and transparent."
+msgstr "దయచేసి మీ వివరాలను పూరించండి. అన్ని లావాదేవీలు సురక్షితం మరియు పారదర్శకంగా ఉంటాయి."
+
+msgid "Donation Category"
+msgstr "దానం వర్గం"
+
+msgid "Select Amount"
+msgstr "మొత్తం ఎంచుకోండి"
+
+msgid "Email Address"
+msgstr "ఇమెయిల్ చిరునామా"
+
+msgid "Message / Occasion (Optional)"
+msgstr "సందేశం / సందర్భం (ఐచ్ఛికం)"
+
+msgid "Proceed to Donate"
+msgstr "దానానికి కొనసాగండి"
+
+# ── Contact Page ──────────────────────────────────────────────
+msgid "We'd love to hear from you. Reach out for seva bookings, donations, or any enquiry."
+msgstr "మీరు మమ్మల్ని సంప్రదించినందుకు సంతోషం. సేవ బుకింగ్లు, దానాలు లేదా ఏదైనా విచారణ కోసం సంప్రదించండి."
+
+msgid "Send Us a Message"
+msgstr "మాకు సందేశం పంపండి"
+
+msgid "Address"
+msgstr "చిరునామా"
+
+msgid "Phone"
+msgstr "ఫోన్"
+
+msgid "Email"
+msgstr "ఇమెయిల్"
+
+msgid "Temple Hours"
+msgstr "మందిర సమయాలు"
+
+msgid "Office Hours"
+msgstr "కార్యాలయ సమయాలు"
+
+msgid "Subject"
+msgstr "విషయం"
+
+msgid "Message"
+msgstr "సందేశం"
+
+msgid "Send Message"
+msgstr "సందేశం పంపండి"
+
+msgid "Schedule"
+msgstr "షెడ్యూల్"
+
+msgid "Daily Pooja Schedule"
+msgstr "రోజువారీ పూజ షెడ్యూల్"
+
+msgid "Location"
+msgstr "స్థానం"
+
+msgid "Find Us"
+msgstr "మమ్మల్ని కనుగొనండి"
+
+msgid "Help"
+msgstr "సహాయం"
+
+msgid "Frequently Asked Questions"
+msgstr "తరచుగా అడిగే ప్రశ్నలు"
+
+msgid "How do I book a seva online?"
+msgstr "ఆన్‌లైన్‌లో సేవ ఎలా బుక్ చేయాలి?"
+
+msgid "Are donations eligible for 80G tax exemption?"
+msgstr "దానాలు 80G పన్ను మినహాయింపుకు అర్హమైనవా?"
+
+msgid "Can I visit the temple during pooja hours?"
+msgstr "పూజ సమయాల్లో మందిరాన్ని సందర్శించవచ్చా?"
+
+msgid "Is the Annadanam free for all?"
+msgstr "అన్నదానం అందరికీ ఉచితంగా అందుతుందా?"
+
+msgid "How can I volunteer at the temple?"
+msgstr "మందిరంలో స్వచ్ఛంద సేవ ఎలా చేయాలి?"
+
+msgid "Call Us"
+msgstr "కాల్ చేయండి"

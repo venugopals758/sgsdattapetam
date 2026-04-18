@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}Complete Payment{% endblock %}
+
+{% block content %}
+<section class="section-py">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-7">
+
+        <div class="form-card text-center" style="padding:2.5rem 2rem;">
+
+          <div style="width:72px;height:72px;background:linear-gradient(135deg,#c8930a,#ff7a00);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.8rem;">
+            🙏
+          </div>
+
+          <h4 style="margin-bottom:.25rem;">Complete Your Donation</h4>
+          <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem;">
+            You are one step away from making a difference
+          </p>
+
+          <!-- Donation summary -->
+          <div style="background:var(--off-white);border-radius:10px;padding:1.25rem;margin-bottom:1.5rem;text-align:left;">
+            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0e0b0;">
+              <span style="color:#888;font-size:.85rem;">Donor</span>
+              <span style="font-weight:600;font-size:.9rem;">{{ donation.name }}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0e0b0;">
+              <span style="color:#888;font-size:.85rem;">Purpose</span>
+              <span style="font-weight:600;font-size:.9rem;">{{ donation.purpose|default:"General Donation" }}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:10px 0 0;">
+              <span style="color:#888;font-size:.85rem;">Amount</span>
+              <span style="font-weight:700;font-size:1.4rem;color:var(--primary);">₹{{ donation.amount }}</span>
+            </div>
+          </div>
+
+          <!-- Hidden form — submitted programmatically after Razorpay success -->
+          <form id="paymentForm" method="post" action="{% url 'donations_verify' donation.pk %}">
+            {% csrf_token %}
+            <input type="hidden" name="razorpay_payment_id" id="rzp_payment_id">
+            <input type="hidden" name="razorpay_order_id"   id="rzp_order_id">
+            <input type="hidden" name="razorpay_signature"  id="rzp_signature">
+          </form>
+
+          <button id="payBtn"
+                  class="btn-saffron w-100 justify-content-center"
+                  style="display:flex;padding:15px;font-size:1rem;">
+            <i class="fas fa-lock me-2"></i> Pay ₹{{ donation.amount }} Securely
+          </button>
+
+          <a href="{% url 'donations' %}"
+             style="display:block;margin-top:1rem;font-size:.82rem;color:var(--text-muted);">
+            &larr; Cancel and go back
+          </a>
+
+          <p style="margin-top:1.5rem;font-size:.75rem;color:#aaa;line-height:1.6;">
+            <i class="fas fa-shield-halved me-1"></i>
+            Payments are processed securely via Razorpay. Your card details are never stored.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('payBtn');
+
+  var options = {
+    key:         '{{ razorpay_key }}',
+    amount:      {{ amount_paise }},
+    currency:    'INR',
+    name:        'Temple Donation',
+    description: '{{ donation.purpose|default:"General Donation"|escapejs }}',
+    order_id:    '{{ order_id }}',
+    callback_url: '{{ callback_url }}',
+    prefill: {
+      name:    '{{ donation.name|escapejs }}',
+      email:   '{{ donation.email|escapejs }}',
+      contact: '8143385673',
+    },
+    theme: { color: '#c8930a' },
+    modal: {
+      ondismiss: function () {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-lock me-2"></i> Pay ₹{{ donation.amount }} Securely';
+      }
+    }
+  };
+
+  // Create ONE Razorpay instance and reuse it
+  var rzp = new Razorpay(options);
+
+  btn.addEventListener('click', function () {
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Opening payment…';
+    rzp.open();
+  });
+})();
+</script>
+{% endblock %}

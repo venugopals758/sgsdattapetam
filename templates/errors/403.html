@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}Access Denied{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item">
+          <a href="/" style="color:rgba(255,255,255,.5);">{% trans "Home" %}</a>
+        </li>
+        <li class="breadcrumb-item active">{% trans "403" %}</li>
+      </ol>
+    </nav>
+
+    <!-- Large error code -->
+    <div style="font-family:var(--font-h);font-size:clamp(5rem,14vw,9rem);font-weight:700;
+                color:var(--gold);line-height:1;margin:18px 0 4px;
+                text-shadow:0 8px 32px rgba(245,193,108,.35);">403</div>
+
+    <h1>{% trans "Access Denied" %}</h1>
+    <p>{% trans "You do not have the required permission to view this page." %}</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ERROR CARD
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py" style="background:var(--off-white);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+
+        <div style="background:#fff;border-radius:var(--r-lg);padding:52px 44px;
+                    box-shadow:var(--shadow);border:1px solid var(--border-light);
+                    text-align:center;">
+
+          <!-- Icon -->
+          <div style="width:88px;height:88px;border-radius:50%;
+                      background:var(--primary-light);border:2px solid rgba(255,122,0,.18);
+                      display:flex;align-items:center;justify-content:center;
+                      margin:0 auto 28px;">
+            <i class="fas fa-lock" style="font-size:2.2rem;color:var(--primary);"></i>
+          </div>
+
+          <!-- Tag -->
+          <div style="display:inline-block;font-size:.7rem;font-weight:700;
+                      letter-spacing:4px;text-transform:uppercase;color:var(--primary);
+                      padding:4px 16px;background:var(--primary-light);
+                      border-radius:50px;border:1px solid rgba(255,122,0,.18);
+                      margin-bottom:18px;">
+            {% trans "Error 403" %}
+          </div>
+
+          <h3 style="font-family:var(--font-h);font-size:1.6rem;color:var(--dark2);
+                     margin-bottom:14px;letter-spacing:-.02em;">
+            {% trans "Access Denied" %}
+          </h3>
+
+          <p style="color:var(--text-muted);line-height:1.9;font-size:.95rem;
+                    margin-bottom:32px;max-width:340px;margin-left:auto;margin-right:auto;">
+            {% trans "You do not have permission to access this page. Please sign in with an authorised account or contact the temple administration for assistance." %}
+          </p>
+
+          <!-- Divider -->
+          <div style="width:56px;height:2px;background:var(--grad-saffron);
+                      border-radius:2px;margin:0 auto 32px;"></div>
+
+          <!-- CTAs -->
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a href="/" class="btn-saffron" style="text-decoration:none;">
+              <i class="fas fa-house"></i> {% trans "Go to Home" %}
+            </a>
+            <a href="/admin-panel/login/"
+               style="display:inline-flex;align-items:center;gap:9px;
+                      background:transparent;color:var(--primary);
+                      padding:14px 28px;border-radius:50px;font-weight:600;
+                      font-size:.9rem;letter-spacing:.5px;
+                      border:2px solid var(--primary);text-decoration:none;
+                      transition:var(--t);"
+               onmouseover="this.style.background='var(--primary)';this.style.color='#fff'"
+               onmouseout="this.style.background='transparent';this.style.color='var(--primary)'">
+              <i class="fas fa-right-to-bracket"></i> {% trans "Sign In" %}
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

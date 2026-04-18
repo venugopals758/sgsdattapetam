@@ -1,0 +1,507 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "About Us" %}{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="/" style="color:rgba(255,255,255,.5);">{% trans "Home" %}</a></li>
+        <li class="breadcrumb-item active">{% trans "About Us" %}</li>
+      </ol>
+    </nav>
+    <h1>{% trans "About the Temple" %}</h1>
+    <p>{% trans "A living tradition of divine blessings, selfless service, and devotion since 1996 — Parchur, Andhra Pradesh." %}</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     BLESSINGS OF GURU + TEMPLE HISTORY
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Image -->
+      <div class="col-lg-5 reveal-left">
+        <div class="about-img-wrap">
+          <div class="about-img-main">
+            <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/502/502_5e6da55ae891b81e.jpg"
+                 alt="Sri Kalyana Venkateswara Swamy Kshetram" loading="lazy">
+          </div>
+          <div class="about-img-thumb">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/sadguru-deva.jpg"
+                 alt="Sri Sri Ganapathi Sachidananda Swamiji" loading="lazy">
+          </div>
+          <div class="exp-badge">
+            <span class="num">28</span>
+            <span class="lbl">{% trans "Years of" %}<br>{% trans "Devotion" %}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="col-lg-7 reveal-right">
+        <span class="tag" style="font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--primary);margin-bottom:10px;display:block;">{% trans "Blessings of Guru & Temple History" %}</span>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:18px;">
+          {% trans "Built on Divine Grace," %}<br><span style="color:var(--primary);">{% trans "Sustained by Devotion" %}</span>
+        </h2>
+
+        <p class="about-lead">
+          We humbly acknowledge the blessings of two revered spiritual leaders whose
+          divine grace and guidance enabled the construction of our temple:
+        </p>
+        <ul class="about-checks" style="margin-bottom:16px;">
+          <li><i class="fas fa-check-circle"></i> <strong>Sri Sri Ganapathi Sachidananda Swamiji</strong> — Revered pontiff of Avadootha Datta Peetham</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Sri Sri Datta Vijayananda Theertha Swamy</strong> — Distinguished spiritual leader and successor</li>
+        </ul>
+
+        <p class="about-lead">
+          Our history began in <strong>1996</strong> when we received Swamiji's padukas as a symbol of
+          divine blessings. The temple started on a humble <strong>3 cents of land</strong> donated by
+          devoted followers and has grown to nearly <strong>100 cents</strong> today.
+        </p>
+        <p class="about-lead">
+          Now officially known as <strong>Sri Kalyana Venkateswara Swami Sametha Asta Lakshmi Devalayam</strong>,
+          we serve devotees of Parchur and surrounding villages through daily worship,
+          community seva, and the Datta Deeksha programme.
+        </p>
+
+        <ul class="about-checks">
+          <li><i class="fas fa-check-circle"></i> 11 Revered Deities &amp; Shrines</li>
+          <li><i class="fas fa-check-circle"></i> Friday Annadanam — 8+ Years</li>
+          <li><i class="fas fa-check-circle"></i> Datta Deeksha — 20+ Years, 10+ Villages</li>
+          <li><i class="fas fa-check-circle"></i> Go Seva — Goshallaa</li>
+          <li><i class="fas fa-check-circle"></i> Annapurna Mandiram</li>
+          <li><i class="fas fa-check-circle"></i> Guru Nilayam Shrine</li>
+        </ul>
+        <a href="/contact/" class="btn-saffron">
+          <i class="fas fa-phone-alt me-1"></i> {% trans "Get in Touch" %}
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     COUNTER
+═══════════════════════════════════════════════════════════ -->
+<section class="counter-bar">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="20000" data-suffix="+">20,000+</span>
+        <span class="ctr-lbl">{% trans "Devotees Blessed" %}</span>
+      </div>
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="8" data-suffix="+">8+</span>
+        <span class="ctr-lbl">{% trans "Years of Annadanam" %}</span>
+      </div>
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="100" data-suffix="">100</span>
+        <span class="ctr-lbl">{% trans "Cents of Temple Land" %}</span>
+      </div>
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="11" data-suffix="">11</span>
+        <span class="ctr-lbl">{% trans "Revered Deities" %}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     KUMBHABHISHEKAM HIGHLIGHT
+═══════════════════════════════════════════════════════════ -->
+<section class="quote-banner">
+  <div class="container">
+    <blockquote>
+      "On January 31st, our temple was consecrated by Sri Ganapathi Sachidananda Swamiji
+      and Sri Datta Vijayananda Theertha Swamiji — infusing the kshetram with eternal divine energy."
+    </blockquote>
+    <cite>— Kumbhabhishekam Ceremony &nbsp;·&nbsp; Performed by Two Revered Gurus &nbsp;·&nbsp; January 31st</cite>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     DEITIES — 11 Divine Shrines
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "Divine Abodes" %}</span>
+      <h2>{% trans "11 Revered Deities" %}</h2>
+      <div class="divider"></div>
+      <p>{% trans "Our temple complex houses eleven sacred shrines — a rich tapestry of Hindu mythology and spirituality." %}</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d1">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-star"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Sri Bhoo Sametha<br>Kalyana Venkateswara Swamy</h4>
+          <p class="dt-desc" style="font-size:.82rem;">Lord Venkateswara with Sridevi &amp; Bhudevi — bestowing blessings of marriage and prosperity.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d2">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-coins"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Aatalakshmi Devatha Parivrutha</h4>
+          <p class="dt-desc" style="font-size:.82rem;">Goddess Lakshmi — the embodiment of prosperity, good fortune, and divine abundance.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d3">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-om"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Sri Angadathatreya Swamy</h4>
+          <p class="dt-desc" style="font-size:.82rem;">A sacred shrine dedicated to Lord Dattatreya — the divine trinity of Brahma, Vishnu, and Shiva.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d4">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-infinity"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Sri Maha Ganapathi</h4>
+          <p class="dt-desc" style="font-size:.82rem;">Lord Ganesha — the remover of obstacles, patron of knowledge and new beginnings.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d1">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-bolt"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Sri Abhaya Anjaneya Swamy</h4>
+          <p class="dt-desc" style="font-size:.82rem;">Lord Hanuman — the embodiment of strength, courage, and unwavering devotion.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d2">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-moon"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Parvathi Parameswarullu</h4>
+          <p class="dt-desc" style="font-size:.82rem;">Lord Shiva with Goddess Parvathi — the supreme cosmic deity, source of creation and liberation.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d3">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-circle-nodes"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Navagrahallu</h4>
+          <p class="dt-desc" style="font-size:.82rem;">The nine planetary deities — worshipped for cosmic harmony, peace, and protection from negative influences.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d4">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-sun"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Subramanyaswamy</h4>
+          <p class="dt-desc" style="font-size:.82rem;">Lord Subramanya — revered for his blessings of courage, wisdom, and victory over adversity.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d1">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-seedling"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Goshallaa</h4>
+          <p class="dt-desc" style="font-size:.82rem;">A sacred cowshed — Go Seva in honour of the divine cow, symbol of abundance and motherly grace.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d2">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-hands-praying"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Guru Nilayam</h4>
+          <p class="dt-desc" style="font-size:.82rem;">Shrine of Sri Ganapathi Sachidananda Swamiji &amp; Sri Vijayananda Theertha Swamiji — our revered gurus.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6 reveal d3">
+        <div class="donation-type-card h-100 text-center">
+          <div class="dt-icon"><i class="fas fa-utensils"></i></div>
+          <h4 class="dt-title" style="font-size:.95rem;">Annapurna Mandiram</h4>
+          <p class="dt-desc" style="font-size:.82rem;">Temple of Goddess Annapurna — patron of food and nourishment, blessing all who serve and receive.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ANNADANAM SECTION
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py bg-off-white">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "Seva & Compassion" %}</span>
+      <h2>{% trans "Annadanam & Datta Deeksha" %}</h2>
+      <div class="divider"></div>
+      <p>{% trans "Feeding the body, nourishing the soul — our most cherished community mission." %}</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 reveal d1">
+        <div class="donation-type-card h-100">
+          <div class="dt-icon"><i class="fas fa-bowl-food"></i></div>
+          <h4 class="dt-title">Friday Annadanam Seva</h4>
+          <p class="dt-desc">
+            By the divine grace of Goddess Annapurna, we have been performing
+            <strong>Annadanam Seva every Friday for 8+ years</strong>.
+            A special pooja is conducted every Friday invoking Goddess Annapurna's blessings,
+            followed by free food distribution. This service is made possible through the
+            generous donations of our devoted community.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 reveal d2">
+        <div class="donation-type-card h-100">
+          <div class="dt-icon"><i class="fas fa-people-carry-box"></i></div>
+          <h4 class="dt-title">Datta Deeksha Initiative</h4>
+          <p class="dt-desc">
+            For over <strong>20 years</strong>, our devotees have participated in the
+            Datta Deeksha programme — visiting <strong>10+ villages</strong> and collecting
+            a handful of rice from every household. This rice is then donated to
+            <strong>Mysore Dattapitam for Annadanam</strong> — embodying compassion,
+            community service, and the spirit of selfless giving.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     VISION & MISSION
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "Our Purpose" %}</span>
+      <h2>{% trans "Vision & Mission" %}</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 reveal d1">
+        <div class="donation-type-card h-100">
+          <div class="dt-icon"><i class="fas fa-eye"></i></div>
+          <h4 class="dt-title">{% trans "Our Vision" %}</h4>
+          <p class="dt-desc">
+            To be a vibrant centre of Dharmic values rooted in the teachings of
+            Sri Ganapathi Sachidananda Swamiji — where every devotee finds peace,
+            purpose, and the divine grace of Lord Venkateswara.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal d2">
+        <div class="donation-type-card h-100">
+          <div class="dt-icon"><i class="fas fa-bullseye"></i></div>
+          <h4 class="dt-title">{% trans "Our Mission" %}</h4>
+          <p class="dt-desc">
+            To uphold authentic Vedic traditions through daily rituals, festivals,
+            and community programmes — while serving the physical and spiritual
+            needs of devotees in Parchur and surrounding villages.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal d3">
+        <div class="donation-type-card h-100">
+          <div class="dt-icon"><i class="fas fa-heart"></i></div>
+          <h4 class="dt-title">{% trans "Our Values" %}</h4>
+          <p class="dt-desc">
+            <strong>Seva</strong> — selfless service to all.<br>
+            <strong>Bhakti</strong> — pure devotion to the Divine.<br>
+            <strong>Ahimsa</strong> — compassion and non-violence.<br>
+            <strong>Datta Dharma</strong> — following Swamiji's path.<br>
+            <strong>Annadanam</strong> — nourishing body and soul.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     DEVOTEE TEAMS
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py bg-off-white">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "Dedicated Service" %}</span>
+      <h2>{% trans "Our Devotee Teams" %}</h2>
+      <div class="divider"></div>
+      <p>{% trans "The heartbeat of our temple — selfless volunteers who make every seva possible." %}</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-6 col-lg-5 reveal d1">
+        <div class="donation-type-card h-100">
+          <div class="dt-icon"><i class="fas fa-people-group"></i></div>
+          <h4 class="dt-title">Datta Humanity Service Team</h4>
+          <p class="dt-desc">
+            A dedicated group of devotees embodying the spirit of compassion and service.
+            Always ready to help, they provide assistance in various community situations —
+            from emergency relief to temple activities. The team proudly wears a
+            <strong>uniform dress code</strong> symbolising unity, devotion, and the
+            teachings of Sri Ganapathi Sachidananda Swamiji.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-5 reveal d2">
+        <div class="donation-type-card h-100">
+          <div class="dt-icon"><i class="fas fa-hands-holding-heart"></i></div>
+          <h4 class="dt-title">Mathru Mandalli Team</h4>
+          <p class="dt-desc">
+            A vital part of our temple community — devoted women who diligently maintain
+            the temple's upkeep and participate in all religious activities.
+            They also <strong>prepare and serve food at Annapurna Mandiram</strong>
+            during Friday Annadanam, nourishing both body and soul with love
+            and maternal devotion.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     LEADERSHIP — The Revered Gurus
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "Divine Guidance" %}</span>
+      <h2>{% trans "Revered Gurus & Leadership" %}</h2>
+      <div class="divider"></div>
+      <p>{% trans "With deepest reverence, we offer our namaskaras to the lotus feet of our beloved gurus." %}</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-lg-3 col-md-6 reveal d1 text-center">
+        <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/sadguru-deva.jpg"
+             alt="Sri Sri Ganapathi Sachidananda Swamiji"
+             style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);box-shadow:var(--shadow-sm);margin:0 auto 16px;">
+        <h5 style="font-size:1rem;color:var(--dark2);margin-bottom:4px;">Sri Sri Ganapathi Sachidananda Swamiji</h5>
+        <p style="font-size:.8rem;color:var(--primary);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Revered Patron &amp; Spiritual Guide</p>
+        <p style="font-size:.84rem;color:var(--text-muted);line-height:1.75;">The revered pontiff of Avadootha Datta Peetham, whose blessings and inspiration enabled the establishment of our temple in 1996.</p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 reveal d2 text-center">
+        <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/bala-swamiji.jpg"
+             alt="Sri Sri Datta Vijayananda Theertha Swamy"
+             style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);box-shadow:var(--shadow-sm);margin:0 auto 16px;">
+        <h5 style="font-size:1rem;color:var(--dark2);margin-bottom:4px;">Sri Sri Datta Vijayananda Theertha Swamy</h5>
+        <p style="font-size:.8rem;color:var(--primary);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Distinguished Spiritual Leader</p>
+        <p style="font-size:.84rem;color:var(--text-muted);line-height:1.75;">A successor and distinguished spiritual leader whose wisdom and support contributed significantly to our temple's construction and consecration.</p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 reveal d3 text-center">
+        <img src="https://i.pravatar.cc/200?img=12"
+             alt="Datta Humanity Service Team"
+             style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);box-shadow:var(--shadow-sm);margin:0 auto 16px;">
+        <h5 style="font-size:1rem;color:var(--dark2);margin-bottom:4px;">Datta Humanity Service Team</h5>
+        <p style="font-size:.8rem;color:var(--primary);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Community Service Wing</p>
+        <p style="font-size:.84rem;color:var(--text-muted);line-height:1.75;">Serving humanity across 10+ villages through the Datta Deeksha programme for over 20 years with compassion and unity.</p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 reveal d4 text-center">
+        <img src="https://i.pravatar.cc/200?img=18"
+             alt="Mathru Mandalli Team"
+             style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);box-shadow:var(--shadow-sm);margin:0 auto 16px;">
+        <h5 style="font-size:1rem;color:var(--dark2);margin-bottom:4px;">Mathru Mandalli Team</h5>
+        <p style="font-size:.8rem;color:var(--primary);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Temple Seva &amp; Annadanam</p>
+        <p style="font-size:.84rem;color:var(--text-muted);line-height:1.75;">Devoted women who prepare and serve food at Annapurna Mandiram every Friday, embodying the spirit of maternal love and selfless service.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     GALLERY PREVIEW
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py-sm bg-off-white">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="tag">{% trans "A Glimpse" %}</span>
+      <h2>{% trans "Temple Gallery" %}</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-2 reveal d1">
+        <div style="border-radius:var(--r-sm);overflow:hidden;aspect-ratio:1;box-shadow:var(--shadow-xs);">
+          <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/raja-rajeswari-temple.jpg"
+               alt="Temple Complex" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block;"
+               onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 reveal d2">
+        <div style="border-radius:var(--r-sm);overflow:hidden;aspect-ratio:1;box-shadow:var(--shadow-xs);">
+          <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/hanuman-temple.jpeg"
+               alt="Anjaneya Swamy Shrine" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block;"
+               onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 reveal d3">
+        <div style="border-radius:var(--r-sm);overflow:hidden;aspect-ratio:1;box-shadow:var(--shadow-xs);">
+          <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/502/502_f4837402856c5496.jpg"
+               alt="Temple Sanctum" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block;"
+               onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 reveal d4">
+        <div style="border-radius:var(--r-sm);overflow:hidden;aspect-ratio:1;box-shadow:var(--shadow-xs);">
+          <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/bonsai-3.jpg"
+               alt="Temple Grounds" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block;"
+               onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 reveal d5">
+        <div style="border-radius:var(--r-sm);overflow:hidden;aspect-ratio:1;box-shadow:var(--shadow-xs);">
+          <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/shikhavana-avairy.jpg"
+               alt="Annadanam Seva" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block;"
+               onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2 reveal d1">
+        <div style="border-radius:var(--r-sm);overflow:hidden;aspect-ratio:1;box-shadow:var(--shadow-xs);">
+          <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/nadamandapa-interior.jpg"
+               alt="Festival Celebrations" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block;"
+               onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

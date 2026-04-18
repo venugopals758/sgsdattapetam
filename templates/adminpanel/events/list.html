@@ -1,0 +1,82 @@
+{% extends 'adminpanel/base.html' %}
+{% block title %}Events{% endblock %}
+{% block topbar_title %}Events{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <h4>Events</h4>
+    <p>Manage temple events and festivals</p>
+  </div>
+  <a href="{% url 'ap:events_create' %}" class="btn-ap">
+    <i class="fas fa-plus"></i> Add Event
+  </a>
+</div>
+
+<div class="ap-table">
+  <div class="ap-table-body">
+    <table id="tbl-events" class="table table-hover align-middle w-100">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for e in events %}
+        <tr>
+          <td class="text-muted">{{ forloop.counter }}</td>
+          <td class="fw-500">{{ e.title }}</td>
+          <td class="text-muted" style="font-size:.82rem;white-space:nowrap;">{{ e.start_date }}</td>
+          <td class="text-muted" style="font-size:.82rem;white-space:nowrap;">{{ e.end_date|default:"—" }}</td>
+          <td class="text-muted" style="font-size:.82rem;">{{ e.location|default:"—" }}</td>
+          <td>
+            {% if e.is_active %}
+              <span class="status-badge completed">Active</span>
+            {% else %}
+              <span class="status-badge failed">Inactive</span>
+            {% endif %}
+          </td>
+          <td>
+            <a href="{% url 'ap:events_edit' e.pk %}" class="btn btn-sm btn-outline-secondary me-1" title="Edit">
+              <i class="fas fa-pencil"></i>
+            </a>
+            <a href="{% url 'ap:events_delete' e.pk %}" class="btn btn-sm btn-outline-danger" title="Delete">
+              <i class="fas fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(function () {
+  $('#tbl-events').DataTable({
+    pageLength: 10,
+    lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']],
+    order: [[2, 'desc']],
+    columnDefs: [
+      { orderable: false, targets: 0 },
+      { orderable: false, targets: 6 }
+    ],
+    language: {
+      search: '', searchPlaceholder: 'Search events…',
+      lengthMenu: 'Show _MENU_',
+      info: 'Showing _START_–_END_ of _TOTAL_',
+      paginate: { previous: '‹', next: '›' },
+      emptyTable: 'No events found.',
+    }
+  });
+});
+</script>
+{% endblock %}

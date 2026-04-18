@@ -1,0 +1,159 @@
+{% extends 'adminpanel/base.html' %}
+{% block title %}Theme Settings{% endblock %}
+{% block topbar_title %}Theme Settings{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-8">
+
+    <div class="page-header">
+      <div>
+        <h4>Theme Settings</h4>
+        <p>Customize website colors — changes apply instantly site-wide</p>
+      </div>
+    </div>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <div class="form-card mb-3">
+        <h6 class="fw-700 mb-3" style="font-size:.87rem;">Color Palette</h6>
+        <div class="row g-3">
+
+          <div class="col-sm-6 col-md-4">
+            <label class="form-label">Primary Color (Gold)</label>
+            {{ form.primary_color }}
+            <div class="text-muted mt-1" style="font-size:.73rem;">Main brand gold — headings, borders</div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <label class="form-label">Secondary Color (Saffron)</label>
+            {{ form.secondary_color }}
+            <div class="text-muted mt-1" style="font-size:.73rem;">Buttons, highlights, accents</div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <label class="form-label">Background Color</label>
+            {{ form.background_color }}
+            <div class="text-muted mt-1" style="font-size:.73rem;">Page background tint</div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <label class="form-label">Text Color</label>
+            {{ form.text_color }}
+            <div class="text-muted mt-1" style="font-size:.73rem;">Main body text</div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <label class="form-label">Accent Color</label>
+            {{ form.accent_color }}
+            <div class="text-muted mt-1" style="font-size:.73rem;">Links, decorative elements</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-card mb-3">
+        <h6 class="fw-700 mb-3" style="font-size:.87rem;">Typography</h6>
+        <div class="col-md-6">
+          <label class="form-label">Font Family</label>
+          {{ form.font_family }}
+        </div>
+      </div>
+
+      <!-- Live Preview -->
+      <div class="form-card mb-3">
+        <h6 class="fw-700 mb-3" style="font-size:.87rem;">Live Preview</h6>
+        <div id="theme-preview" style="border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+          <div id="prev-header" style="padding:16px 20px;">
+            <div id="prev-title" style="font-size:1.1rem;font-weight:700;margin-bottom:4px;">Divine Temple</div>
+            <div id="prev-sub" style="font-size:.8rem;opacity:.7;">A sacred place of devotion</div>
+          </div>
+          <div style="background:#fff;padding:16px 20px;">
+            <div id="prev-btn" style="display:inline-block;padding:8px 20px;border-radius:6px;color:#fff;font-size:.82rem;font-weight:600;cursor:default;">
+              Book Seva
+            </div>
+            <span id="prev-text" style="margin-left:16px;font-size:.85rem;">Sample body text for the website.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn-ap btn">
+          <i class="fas fa-save me-1"></i> Save Theme
+        </button>
+        <a href="{% url 'ap:dashboard' %}" class="btn btn-outline-secondary">Cancel</a>
+      </div>
+    </form>
+
+  </div>
+
+  <!-- Info panel -->
+  <div class="col-lg-4">
+    <div class="form-card">
+      <h6 class="fw-700 mb-3" style="font-size:.87rem;"><i class="fas fa-info-circle me-1 text-muted"></i> How it works</h6>
+      <p style="font-size:.81rem;color:#6b7280;line-height:1.6;">
+        These colors are injected as CSS variables into every page of the public website.
+        Saving here updates the theme instantly — no cache clearing needed.
+      </p>
+      <hr style="border-color:#f3f4f6;">
+      <div style="font-size:.79rem;color:#374151;">
+        <div class="mb-2"><strong>Primary Gold</strong> — headings, decorative borders, section titles</div>
+        <div class="mb-2"><strong>Secondary Saffron</strong> — call-to-action buttons, active states, links</div>
+        <div class="mb-2"><strong>Background</strong> — page background, card fills</div>
+        <div class="mb-2"><strong>Text Color</strong> — main body and paragraph text</div>
+        <div><strong>Accent</strong> — hover effects, icons, secondary elements</div>
+      </div>
+      {% if obj.updated_at %}
+      <hr style="border-color:#f3f4f6;">
+      <div style="font-size:.75rem;color:#9ca3af;">
+        Last saved: {{ obj.updated_at|date:"d M Y, H:i" }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+  const inputs = {
+    primary:    document.querySelector('[name="primary_color"]'),
+    secondary:  document.querySelector('[name="secondary_color"]'),
+    background: document.querySelector('[name="background_color"]'),
+    text:       document.querySelector('[name="text_color"]'),
+    accent:     document.querySelector('[name="accent_color"]'),
+    font:       document.querySelector('[name="font_family"]'),
+  };
+  const prev = {
+    header: document.getElementById('prev-header'),
+    title:  document.getElementById('prev-title'),
+    sub:    document.getElementById('prev-sub'),
+    btn:    document.getElementById('prev-btn'),
+    text:   document.getElementById('prev-text'),
+  };
+
+  function update() {
+    if (inputs.primary && prev.header)
+      prev.header.style.backgroundColor = inputs.primary.value;
+    if (inputs.text && prev.title) {
+      prev.title.style.color = '#fff';
+      prev.sub.style.color   = '#fff';
+    }
+    if (inputs.secondary && prev.btn)
+      prev.btn.style.backgroundColor = inputs.secondary.value;
+    if (inputs.text && prev.text)
+      prev.text.style.color = inputs.text.value;
+    if (inputs.font && prev.title)
+      prev.title.style.fontFamily = inputs.font.value;
+  }
+
+  Object.values(inputs).forEach(el => {
+    if (el) el.addEventListener('input', update);
+  });
+  update();
+})();
+</script>
+{% endblock %}

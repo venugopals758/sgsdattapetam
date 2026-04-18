@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seva Booking Receipt</title>
+  <style>
+    body { margin: 0; padding: 0; background: #f5f0e8; font-family: Georgia, serif; color: #2d1b0e; }
+    .wrapper { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.08); }
+    .header { background: linear-gradient(135deg, #c8930a 0%, #ff7a00 100%); padding: 40px 32px; text-align: center; }
+    .header h1 { margin: 0 0 4px; color: #fff; font-size: 1.7rem; letter-spacing: .5px; }
+    .header p  { margin: 0; color: rgba(255,255,255,.85); font-size: .9rem; }
+    .om { font-size: 2.5rem; color: rgba(255,255,255,.9); display: block; margin-bottom: 8px; }
+    .body { padding: 36px 32px; }
+    .greeting { font-size: 1.1rem; margin-bottom: 16px; }
+    .thanks { color: #555; line-height: 1.7; margin-bottom: 28px; }
+    .receipt-box { background: #fffbf0; border: 1px solid #f0e0b0; border-radius: 10px; padding: 24px; margin-bottom: 28px; }
+    .receipt-box h3 { margin: 0 0 18px; font-size: .85rem; text-transform: uppercase; letter-spacing: 1px; color: #c8930a; border-bottom: 1px solid #f0e0b0; padding-bottom: 10px; }
+    .row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f5edd5; }
+    .row:last-child { border-bottom: none; }
+    .label { color: #888; font-size: .85rem; }
+    .value { font-weight: bold; font-size: .9rem; text-align: right; }
+    .amount-value { font-size: 1.4rem; color: #c8930a; font-weight: 700; }
+    .footer-msg { text-align: center; color: #888; font-size: .82rem; line-height: 1.7; margin-bottom: 28px; }
+    .footer-msg .blessing { font-size: 1.1rem; color: #c8930a; display: block; margin-bottom: 8px; }
+    .footer { background: #2d1b0e; padding: 24px 32px; text-align: center; }
+    .footer p { margin: 0; color: rgba(255,255,255,.6); font-size: .8rem; line-height: 1.7; }
+    .footer .name { color: #fff; font-size: 1rem; margin-bottom: 4px; }
+    .badge { display: inline-block; background: rgba(200,147,10,.15); color: #c8930a; border: 1px solid rgba(200,147,10,.3); border-radius: 20px; padding: 4px 14px; font-size: .78rem; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="header">
+      <span class="om">🙏</span>
+      <h1>Seva Booking Confirmed</h1>
+      <p>Your sacred seva has been booked successfully</p>
+    </div>
+
+    <div class="body">
+      <p class="greeting">Dear <strong>{{ booking.devotee_name }}</strong>,</p>
+      <p class="thanks">
+        We are honoured to receive your seva booking. The temple priests will perform the
+        ritual on your behalf with complete devotion. May the divine blessings of the
+        presiding deity be with you and your family always.
+      </p>
+
+      <div class="receipt-box">
+        <h3>Booking Details</h3>
+
+        <div class="row">
+          <span class="label">Seva</span>
+          <span class="value">{{ booking.seva }}</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Date</span>
+          <span class="value">{{ booking.date|date:"d M Y" }}</span>
+        </div>
+
+        {% if booking.gotram %}
+        <div class="row">
+          <span class="label">Gotram</span>
+          <span class="value">{{ booking.gotram }}</span>
+        </div>
+        {% endif %}
+
+        <div class="row">
+          <span class="label">Amount Paid</span>
+          <span class="value amount-value">₹{{ amount }}</span>
+        </div>
+
+        {% if booking.payment_id %}
+        <div class="row">
+          <span class="label">Transaction ID</span>
+          <span class="value" style="font-family:monospace;font-size:.82rem;">{{ booking.payment_id }}</span>
+        </div>
+        {% endif %}
+
+        <div class="row">
+          <span class="label">Booked On</span>
+          <span class="value">{{ booking.booked_at|date:"d M Y, h:i A" }}</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Status</span>
+          <span class="value" style="color:#16a34a;">&#10003; Confirmed</span>
+        </div>
+      </div>
+
+      <div class="footer-msg">
+        <span class="blessing">🌸 May you be blessed abundantly</span>
+        Please retain this email as your booking confirmation.
+        For any queries, contact us through our website.
+      </div>
+
+      <div style="text-align:center;">
+        <span class="badge">Booking #{{ booking.pk }}</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p class="name">Temple Team</p>
+      <p>
+        This is an automated confirmation. Please do not reply to this email.<br>
+        For queries, contact us through our website.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

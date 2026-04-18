@@ -1,0 +1,426 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════════════════════ -->
+<section class="hero-section">
+  <img class="hero-bg"
+       src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/sdvt.jpeg"
+       alt="Sri Kalyana Venkateswara Swamy Kshetram, Parchur" loading="eager">
+  <div class="hero-overlay"></div>
+
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left: Text -->
+      <div class="col-lg-6 hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span> Est. 1996 &nbsp;·&nbsp; Parchur, Andhra Pradesh
+        </div>
+        <h1 class="hero-title">
+          {% trans "Welcome to" %}<br>
+          <span class="highlight">Sri Kalyana Venkateswara<br>Swamy Kshetram</span>
+        </h1>
+        <p class="hero-subtitle">
+          {% trans "A sacred abode in Parchur, blessed by the divine grace of Sri Sri Ganapathi Sachidananda Swamiji. Serving devotees through daily worship, Annadanam, and selfless community seva since 1996." %}
+        </p>
+        <div class="hero-actions">
+          <a href="/donations/" class="btn-saffron">
+            <i class="fas fa-heart"></i> {% trans "Donate Now" %}
+          </a>
+          <a href="/seva/" class="btn-white">
+            <i class="fas fa-hands-praying"></i> {% trans "Book Seva" %}
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="number">20K+</span>
+            <span class="label">{% trans "Devotees" %}</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number">28+</span>
+            <span class="label">{% trans "Years" %}</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number">11</span>
+            <span class="label">{% trans "Deities" %}</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number">365</span>
+            <span class="label">{% trans "Days Open" %}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Image card -->
+      <div class="col-lg-6 hero-visual d-none d-lg-block">
+        <div class="hero-img-frame">
+          <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/502/502_5e6da55ae891b81e.jpg"
+               alt="Sri Kalyana Venkateswara Swamy Temple Complex">
+        </div>
+        <div class="hero-float-card fc-1">
+          <div class="fc-icon"><i class="fas fa-calendar-check"></i></div>
+          <div>
+            <div class="fc-title">{% trans "Next Pooja" %}</div>
+            <div class="fc-sub">Rudrabhishekam — Today 6:00 AM</div>
+          </div>
+        </div>
+        <div class="hero-float-card fc-2">
+          <div class="fc-icon"><i class="fas fa-utensils"></i></div>
+          <div>
+            <div class="fc-title">{% trans "Friday Annadanam" %}</div>
+            <div class="fc-sub">{% trans "Free meals · 8+ years of seva" %}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="wheel"></div>
+    {% trans "Scroll" %}
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURE BAR
+═══════════════════════════════════════════════════════════ -->
+<section class="feature-bar">
+  <div class="container">
+    <div class="row g-0 justify-content-center">
+      <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg-0">
+        <div class="feature-item">
+          <div class="fi-icon"><i class="fas fa-sun"></i></div>
+          <div>
+            <div class="fi-title">{% trans "Daily Rituals" %}</div>
+            <div class="fi-sub">{% trans "Morning 6 AM · Evening 6 PM" %}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg-0">
+        <div class="feature-item">
+          <div class="fi-icon"><i class="fas fa-utensils"></i></div>
+          <div>
+            <div class="fi-title">{% trans "Annadanam" %}</div>
+            <div class="fi-sub">{% trans "Every Friday · 8+ Years" %}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg-0">
+        <div class="feature-item">
+          <div class="fi-icon"><i class="fas fa-hands-praying"></i></div>
+          <div>
+            <div class="fi-title">{% trans "Special Sevas" %}</div>
+            <div class="fi-sub">{% trans "Book in-person or via phone" %}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="feature-item">
+          <div class="fi-icon"><i class="fas fa-om"></i></div>
+          <div>
+            <div class="fi-title">{% trans "11 Deities" %}</div>
+            <div class="fi-sub">{% trans "Revered divine abodes" %}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURED SEVA
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "Sacred Services" %}</span>
+      <h2>{% trans "Featured Seva" %}</h2>
+      <div class="divider"></div>
+      <p>{% trans "Participate in divine rituals and earn blessings for you and your family." %}</p>
+    </div>
+
+    <div class="row g-4">
+
+      {% for s in featured_sevas %}
+      <div class="col-lg-3 col-md-6 reveal {% cycle 'd1' 'd2' 'd3' 'd4' %}">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/dattatreya-nirajanam.jpg"
+                 alt="{{ s.name }}" loading="lazy">
+            {% if forloop.first %}<span class="sc-badge">{% trans "Popular" %}</span>{% endif %}
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">{{ s.name }}</h4>
+            <p class="sc-desc">{{ s.description|truncatewords:16|default:s.name }}</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>{{ s.price|floatformat:"0" }}</div>
+              <a href="/seva/" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <!-- Fallback if no sevas in DB -->
+      <div class="col-12 text-center py-3">
+        <p style="color:var(--text-muted);">{% trans "Seva listings coming soon. Please visit our Seva page." %}</p>
+      </div>
+      {% endfor %}
+
+    </div><!-- /row -->
+
+    <div class="text-center mt-5 reveal">
+      <a href="/seva/" class="btn-outline-saffron">
+        {% trans "View All Sevas" %} <i class="fas fa-arrow-right ms-1"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     COUNTER BAR
+═══════════════════════════════════════════════════════════ -->
+<section class="counter-bar">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="20000" data-suffix="+">20,000+</span>
+        <span class="ctr-lbl">{% trans "Devotees Blessed" %}</span>
+      </div>
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="28" data-suffix="+">28+</span>
+        <span class="ctr-lbl">{% trans "Years of Service" %}</span>
+      </div>
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="10" data-suffix="+">10+</span>
+        <span class="ctr-lbl">{% trans "Villages Reached" %}</span>
+      </div>
+      <div class="col-6 col-md-3 ctr-item">
+        <span class="ctr-num" data-target="8" data-suffix="+">8+</span>
+        <span class="ctr-lbl">{% trans "Years of Annadanam" %}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     UPCOMING EVENTS
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py bg-off-white">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "What's Happening" %}</span>
+      <h2>{% trans "Upcoming Festivals" %}</h2>
+      <div class="divider"></div>
+      <p>{% trans "Join us in celebrating sacred festivals and divine rituals at Sri Kalyana Venkateswara Swamy Kshetram." %}</p>
+    </div>
+
+    <div class="row g-4">
+
+      {% for ev in upcoming_events %}
+      <div class="col-lg-4 col-md-6 reveal {% cycle 'd1' 'd2' 'd3' %}">
+        <div class="event-card">
+          <div class="ec-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/nadamandapa-interior.jpg"
+                 alt="{{ ev.title }}" loading="lazy">
+            <div class="ec-date">
+              <span class="day">{{ ev.start_date|date:"d" }}</span>
+              <span class="mon">{{ ev.start_date|date:"M" }}</span>
+            </div>
+          </div>
+          <div class="ec-body">
+            <div class="ec-tag">{% trans "Festival" %}</div>
+            <h4 class="ec-title">{{ ev.title }}</h4>
+            {% if ev.description %}
+            <p style="font-size:.85rem;color:var(--text-muted);line-height:1.75;">
+              {{ ev.description|truncatewords:18 }}
+            </p>
+            {% endif %}
+            <div class="ec-meta">
+              {% if ev.location %}
+              <span><i class="fas fa-map-marker-alt"></i> {{ ev.location }}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <!-- No events in DB yet: fallback static card -->
+      <div class="col-12 text-center py-3">
+        <p style="color:var(--text-muted);">{% trans "No upcoming events at the moment. Check back soon!" %}</p>
+      </div>
+      {% endfor %}
+
+    </div><!-- /row -->
+
+    <div class="text-center mt-5 reveal">
+      <a href="/events/" class="btn-outline-saffron">
+        {% trans "View All Events" %} <i class="fas fa-arrow-right ms-1"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT PREVIEW
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Image stack -->
+      <div class="col-lg-5 reveal-left">
+        <div class="about-img-wrap">
+          <div class="about-img-main">
+            <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/502/502_43ac49e40550ce21.png"
+                 alt="Sri Kalyana Venkateswara Swamy Kshetram, Parchur" loading="lazy">
+          </div>
+          <div class="about-img-thumb">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/sadguru-deva.jpg"
+                 alt="Sri Sri Ganapathi Sachidananda Swamiji" loading="lazy">
+          </div>
+          <div class="exp-badge">
+            <span class="num">28</span>
+            <span class="lbl">{% trans "Years of" %}<br>{% trans "Devotion" %}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="col-lg-7 reveal-right">
+        <span class="tag" style="font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--primary);margin-bottom:10px;display:block;">{% trans "Our Sacred Story" %}</span>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:18px;">{% trans "A Temple Rooted in" %}<br><span style="color:var(--primary);">{% trans "Divine Blessings & Seva" %}</span></h2>
+        <p class="about-lead">
+          {% trans "Founded in 1996 with the divine blessings of Sri Sri Ganapathi Sachidananda Swamiji, the temple began on a humble 3 cents of land gifted by devoted followers. Today it stands proudly on nearly 100 cents — a testament to unwavering faith." %}
+        </p>
+        <p class="about-lead">
+          {% trans "Officially known as Sri Kalyana Venkateswara Swami Sametha Asta Lakshmi Devalayam, our kshetram houses 11 revered deities and serves thousands of devotees through daily rituals, Friday Annadanam, and the Datta Deeksha programme." %}
+        </p>
+        <ul class="about-checks">
+          <li><i class="fas fa-check-circle"></i> {% trans "11 Revered Deities" %}</li>
+          <li><i class="fas fa-check-circle"></i> {% trans "Friday Annadanam — 8+ Years" %}</li>
+          <li><i class="fas fa-check-circle"></i> {% trans "Datta Deeksha — 10+ Villages" %}</li>
+          <li><i class="fas fa-check-circle"></i> {% trans "Go Seva — Goshallaa" %}</li>
+          <li><i class="fas fa-check-circle"></i> {% trans "Annapurna Mandiram" %}</li>
+          <li><i class="fas fa-check-circle"></i> {% trans "Guru Nilayam Shrine" %}</li>
+        </ul>
+        <a href="/about/" class="btn-saffron">
+          {% trans "Learn More About Us" %} <i class="fas fa-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     QUOTE BANNER
+═══════════════════════════════════════════════════════════ -->
+<section class="quote-banner">
+  <div class="container">
+    <blockquote>
+      "{% trans "Where devotion is pure, the Divine is near. Serve, pray, and surrender — the Lord's grace flows abundantly." %}"
+    </blockquote>
+    <cite>— Sri Sri Ganapathi Sachidananda Swamiji, Avadootha Datta Peetham</cite>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py bg-off-white">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "Devotee Stories" %}</span>
+      <h2>{% trans "Words of Gratitude" %}</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6 reveal d1">
+        <div class="testi-card">
+          <div class="tq">"</div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="tt">{% trans "Visiting Sri Kalyana Venkateswara Swamy Kshetram fills my heart with peace. The divine atmosphere and the priests' devotion make every visit truly spiritual." %}</p>
+          <div class="ta">
+            <img class="ta-avatar" src="https://i.pravatar.cc/100?img=5" alt="Devotee">
+            <div>
+              <div class="ta-name">Priya Venkatesh</div>
+              <div class="ta-role">{% trans "Devotee since 2008" %}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 reveal d2">
+        <div class="testi-card">
+          <div class="tq">"</div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="tt">{% trans "The Friday Annadanam here is a beautiful tradition. For over 8 years, selfless devotees have served food to all — this is true compassion in action." %}</p>
+          <div class="ta">
+            <img class="ta-avatar" src="https://i.pravatar.cc/100?img=11" alt="Devotee">
+            <div>
+              <div class="ta-name">Ramesh Aiyar</div>
+              <div class="ta-role">{% trans "Volunteer, 10 years" %}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 reveal d3">
+        <div class="testi-card">
+          <div class="tq">"</div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+          <p class="tt">{% trans "I attended the Venkateswara Swami Kalyanam — the rituals, the chanting, the divine energy — it was an experience beyond words. This kshetram is truly blessed." %}</p>
+          <div class="ta">
+            <img class="ta-avatar" src="https://i.pravatar.cc/100?img=25" alt="Devotee">
+            <div>
+              <div class="ta-name">Kavitha Sharma</div>
+              <div class="ta-role">{% trans "Regular devotee" %}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA STRIP
+═══════════════════════════════════════════════════════════ -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center reveal">
+        <h2>{% trans "Support Our Sacred Mission" %}</h2>
+        <p>{% trans "Your contribution helps us continue Friday Annadanam, maintain 11 divine shrines, and serve devotees across Parchur and beyond every single day." %}</p>
+        <a href="/donations/" class="btn-saffron me-3">
+          <i class="fas fa-hand-holding-heart"></i> {% trans "Donate Today" %}
+        </a>
+        <a href="/contact/" class="btn-outline-saffron">
+          <i class="fas fa-phone-alt"></i> {% trans "Contact Us" %}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

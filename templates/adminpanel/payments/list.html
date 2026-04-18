@@ -1,0 +1,64 @@
+{% extends 'adminpanel/base.html' %}
+{% block title %}Payments{% endblock %}
+{% block topbar_title %}Payments{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <h4>Payments</h4>
+    <p>All payment transactions &nbsp;·&nbsp; <strong>Total: ₹{{ total }}</strong></p>
+  </div>
+</div>
+
+<div class="ap-table">
+  <div class="ap-table-body">
+    <table id="tbl-payments" class="table table-hover align-middle w-100">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Reference</th>
+          <th>Amount</th>
+          <th>Method</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in payments %}
+        <tr>
+          <td class="text-muted">{{ forloop.counter }}</td>
+          <td style="font-family:monospace;font-size:.81rem;">{{ p.reference|default:"—" }}</td>
+          <td><strong>₹{{ p.amount }}</strong></td>
+          <td class="text-muted">{{ p.get_method_display }}</td>
+          <td class="text-muted" style="font-size:.82rem;">{{ p.description|default:"—" }}</td>
+          <td><span class="status-badge {{ p.status }}">{{ p.get_status_display }}</span></td>
+          <td class="text-muted" style="font-size:.8rem;white-space:nowrap;">{{ p.date|date:"d M Y" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(function () {
+  $('#tbl-payments').DataTable({
+    pageLength: 10,
+    lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']],
+    order: [[6, 'desc']],
+    columnDefs: [{ orderable: false, targets: 0 }],
+    language: {
+      search: '', searchPlaceholder: 'Search payments…',
+      lengthMenu: 'Show _MENU_',
+      info: 'Showing _START_–_END_ of _TOTAL_',
+      paginate: { previous: '‹', next: '›' },
+      emptyTable: 'No payment records yet.',
+      zeroRecords: 'No matching records found.',
+    }
+  });
+});
+</script>
+{% endblock %}

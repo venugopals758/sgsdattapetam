@@ -1,0 +1,385 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Seva" %}{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="/" style="color:rgba(255,255,255,.5);">{% trans "Home" %}</a></li>
+        <li class="breadcrumb-item active">{% trans "Seva" %}</li>
+      </ol>
+    </nav>
+    <h1>{% trans "Book a Seva" %}</h1>
+    <p>{% trans "Participate in sacred rituals and receive the divine blessings of the presiding deity." %}</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SEVA HIGHLIGHTS
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py-sm bg-dark-grad">
+  <div class="container">
+    <div class="row g-3 justify-content-center">
+      <div class="col-lg-2 col-md-4 col-6">
+        <div class="seva-highlight reveal d1">
+          <span class="icon">🙏</span>
+          <h4>{% trans "Archana" %}</h4>
+          <p>{% trans "Name-based offering" %}</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6">
+        <div class="seva-highlight reveal d2">
+          <span class="icon">🔱</span>
+          <h4>{% trans "Abhishekam" %}</h4>
+          <p>{% trans "Sacred bathing ritual" %}</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6">
+        <div class="seva-highlight reveal d3">
+          <span class="icon">🔥</span>
+          <h4>{% trans "Homam" %}</h4>
+          <p>{% trans "Sacred fire ritual" %}</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6">
+        <div class="seva-highlight reveal d4">
+          <span class="icon">🌸</span>
+          <h4>Pushpanjali</h4>
+          <p>{% trans "Flower offering" %}</p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6">
+        <div class="seva-highlight reveal d5">
+          <span class="icon">🍚</span>
+          <h4>{% trans "Annadanam" %}</h4>
+          <p>{% trans "Free meal service" %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SEVA GRID
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+
+    <div class="section-title reveal">
+      <span class="tag">{% trans "All Services" %}</span>
+      <h2>{% trans "Available Sevas" %}</h2>
+      <div class="divider"></div>
+      <p>{% trans "Each seva is conducted by experienced priests following traditional Agamic procedures." %}</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- 1 -->
+      <div class="col-lg-4 col-md-6 reveal d1">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/dattatreya-nirajanam.jpg"
+                 alt="Rudrabhishekam" loading="lazy">
+            <span class="sc-badge">{% trans "Most Popular" %}</span>
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">Rudrabhishekam</h4>
+            <p class="sc-desc">Sacred bathing of the Shiva Lingam with panchamritam — milk, curds, ghee, honey, and sugar — followed by chanting of Sri Rudram.</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>501</div>
+              <a href="#book-form" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="col-lg-4 col-md-6 reveal d2">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/527/527_398025271699adef.jpg"
+                 alt="Sahasranama Archana" loading="lazy">
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">Sahasranama Archana</h4>
+            <p class="sc-desc">Chanting of the 1,000 sacred names of the deity with individual flower offerings for each name, performed for specific devotees.</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>251</div>
+              <a href="#book-form" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="col-lg-4 col-md-6 reveal d3">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/datta-jayanthi-1.jpg"
+                 alt="Ganapathi Homam" loading="lazy">
+            <span class="sc-badge">Premium</span>
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">Ganapathi Homam</h4>
+            <p class="sc-desc">A powerful fire ritual invoking Lord Ganesha to remove all obstacles from your path and bless new beginnings.</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>1,001</div>
+              <a href="#book-form" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="col-lg-4 col-md-6 reveal d1">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/527/527_9ba09945ab57abed.jpg"
+                 alt="Annadanam Sponsorship" loading="lazy">
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">Annadanam Sponsorship</h4>
+            <p class="sc-desc">Sponsor a full day of free meals for hundreds of devotees and community members — the greatest act of charity.</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>2,100</div>
+              <a href="#book-form" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="col-lg-4 col-md-6 reveal d2">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/527/527_dc26632e472dd434.jpg"
+                 alt="Navagraha Pooja" loading="lazy">
+            <span class="sc-badge">Special</span>
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">Navagraha Pooja</h4>
+            <p class="sc-desc">Rituals to appease the nine planetary deities, balancing cosmic energies and seeking relief from astrological afflictions.</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>751</div>
+              <a href="#book-form" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="col-lg-4 col-md-6 reveal d3">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/raja-rajeswari-temple.jpg"
+                 alt="Kalyana Utsavam" loading="lazy">
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">Kalyana Utsavam</h4>
+            <p class="sc-desc">The divine marriage ceremony of the presiding deities — a joyful, auspicious event invoking blessings for family harmony.</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>3,001</div>
+              <a href="#book-form" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="col-lg-4 col-md-6 reveal d1">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/Shivaratri-celebrations.png"
+                 alt="Mrityunjaya Homam" loading="lazy">
+            <span class="sc-badge">Healing</span>
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">Mrityunjaya Homam</h4>
+            <p class="sc-desc">A powerful ritual to Lord Shiva for health, longevity, and protection from untimely death and chronic illness.</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>1,501</div>
+              <a href="#book-form" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="col-lg-4 col-md-6 reveal d2">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/homepage_assets/site_1/front_page_images/d-v.jpg"
+                 alt="Satyanarayana Pooja" loading="lazy">
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">Satyanarayana Pooja</h4>
+            <p class="sc-desc">A widely performed Vaishnava ritual for prosperity, fulfilment of wishes, and expressing gratitude for blessings received.</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>601</div>
+              <a href="#book-form" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="col-lg-4 col-md-6 reveal d3">
+        <div class="seva-card">
+          <div class="sc-img">
+            <img src="https://dattapeetham.s3.amazonaws.com/content/page_images/527/527_1ad4471b592a4c0b.jpg"
+                 alt="Go Pooja and Feeding" loading="lazy">
+            <span class="sc-badge">Compassion</span>
+          </div>
+          <div class="sc-body">
+            <h4 class="sc-title">Go Pooja &amp; Feeding</h4>
+            <p class="sc-desc">Perform pooja to sacred cows at our Goshala and sponsor their food and care for a day.</p>
+            <div class="sc-footer">
+              <div class="sc-price"><sup>₹</sup>351</div>
+              <a href="#book-form" class="btn-saffron" style="padding:9px 20px;font-size:.82rem;">{% trans "Book Now" %}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     BOOKING FORM
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py bg-off-white" id="book-form">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <div class="section-title reveal">
+          <span class="tag">{% trans "Sacred Booking" %}</span>
+          <h2>{% trans "Book Your Seva" %}</h2>
+          <div class="divider"></div>
+        </div>
+
+        <!-- Django messages -->
+        {% if messages %}
+        <div class="mb-3">
+          {% for msg in messages %}
+          <div class="alert alert-{% if msg.tags == 'error' %}danger{% else %}success{% endif %} alert-dismissible fade show" role="alert"
+               style="border-radius:10px;font-size:.9rem;">
+            <i class="fas {% if msg.tags == 'error' %}fa-exclamation-circle{% else %}fa-check-circle{% endif %} me-2"></i>
+            {{ msg }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="form-card">
+          <form method="post" action="{% url 'seva' %}#book-form">
+            {% csrf_token %}
+            <div class="row g-3">
+              <div class="col-md-6 form-group">
+                <label class="form-label">{% trans "Full Name" %}</label>
+                {{ form.devotee_name }}
+                {% if form.devotee_name.errors %}
+                  <div class="text-danger" style="font-size:.8rem;">{{ form.devotee_name.errors.0 }}</div>
+                {% endif %}
+              </div>
+              <div class="col-md-6 form-group">
+                <label class="form-label">{% trans "Mobile Number" %}</label>
+                {{ form.mobile }}
+                {% if form.mobile.errors %}
+                  <div class="text-danger" style="font-size:.8rem;">{{ form.mobile.errors.0 }}</div>
+                {% endif %}
+              </div>
+              <div class="col-md-6 form-group">
+                <label class="form-label">{% trans "Email Address" %}</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                  <div class="text-danger" style="font-size:.8rem;">{{ form.email.errors.0 }}</div>
+                {% endif %}
+              </div>
+              <div class="col-md-6 form-group">
+                <label class="form-label">{% trans "Select Seva" %}</label>
+                {{ form.seva }}
+                {% if form.seva.errors %}
+                  <div class="text-danger" style="font-size:.8rem;">{{ form.seva.errors.0 }}</div>
+                {% endif %}
+              </div>
+              <div class="col-md-6 form-group">
+                <label class="form-label">{% trans "Preferred Date" %}</label>
+                {{ form.date }}
+                {% if form.date.errors %}
+                  <div class="text-danger" style="font-size:.8rem;">{{ form.date.errors.0 }}</div>
+                {% endif %}
+              </div>
+              <div class="col-12 form-group">
+                <label class="form-label">{% trans "Gotram / Star (Nakshatra)" %}</label>
+                {{ form.gotram }}
+              </div>
+              <div class="col-12 form-group">
+                <label class="form-label">{% trans "Special Instructions" %}</label>
+                {{ form.notes }}
+              </div>
+            </div>
+            <button type="submit" class="btn-saffron w-100 justify-content-center mt-2" style="display:flex;padding:15px;">
+              <i class="fas fa-hands-praying me-2"></i> {% trans "Confirm Seva Booking" %}
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TEMPLE TIMING
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 reveal">
+        <div class="section-title">
+          <span class="tag">{% trans "Daily Schedule" %}</span>
+          <h2>{% trans "Pooja Timings" %}</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="timing-card">
+          <div class="tc-head"><i class="fas fa-clock me-2"></i>Temple Pooja Schedule</div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Suprabhatam &amp; Thiruvanandal</span><span class="tr-time">6:00 AM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Palliyarai Kaappu</span><span class="tr-time">7:00 AM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Kalasanthi</span><span class="tr-time">8:00 AM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Uchikalam</span><span class="tr-time">12:00 PM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Sayaratchai</span><span class="tr-time">6:00 PM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Irandaam Kalam</span><span class="tr-time">7:00 PM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Ardha Jaama Pooja</span><span class="tr-time">8:30 PM</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if form.errors %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var el = document.getElementById('book-form');
+  if (!el) return;
+  var nav = document.getElementById('mainNav');
+  var offset = nav ? nav.offsetHeight + 16 : 70;
+  window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+});
+</script>
+{% endif %}
+
+{% endblock %}

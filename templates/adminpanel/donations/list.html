@@ -1,0 +1,125 @@
+{% extends 'adminpanel/base.html' %}
+{% block title %}Donations{% endblock %}
+{% block topbar_title %}Donations{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <h4>Donations</h4>
+    <p>All donation records</p>
+  </div>
+</div>
+
+<!-- Filter Bar -->
+<div class="ap-table mb-3" style="padding:18px 24px;">
+  <form method="get" class="row g-2 align-items-end">
+    <div class="col-md-3">
+      <label class="form-label mb-1" style="font-size:.8rem;font-weight:600;color:var(--ap-muted);">Status</label>
+      <select name="status" class="form-select form-select-sm">
+        <option value="">All Statuses</option>
+        <option value="pending"   {% if status_filter == 'pending'   %}selected{% endif %}>Pending</option>
+        <option value="completed" {% if status_filter == 'completed' %}selected{% endif %}>Completed</option>
+        <option value="failed"    {% if status_filter == 'failed'    %}selected{% endif %}>Failed</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label mb-1" style="font-size:.8rem;font-weight:600;color:var(--ap-muted);">From Date</label>
+      <input type="date" name="date_from" class="form-control form-control-sm" value="{{ date_from }}">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label mb-1" style="font-size:.8rem;font-weight:600;color:var(--ap-muted);">To Date</label>
+      <input type="date" name="date_to" class="form-control form-control-sm" value="{{ date_to }}">
+    </div>
+    <div class="col-md-3 d-flex gap-2">
+      <button type="submit" class="btn-ap" style="padding:7px 18px;font-size:.82rem;">
+        <i class="fas fa-filter"></i> Filter
+      </button>
+      <a href="{% url 'ap:donations_list' %}" class="btn btn-sm btn-outline-secondary">Clear</a>
+    </div>
+  </form>
+</div>
+
+<!-- Summary -->
+<div class="row g-3 mb-3">
+  <div class="col-md-4">
+    <div style="background:#fff;border-radius:10px;padding:14px 20px;border:1px solid var(--ap-border);">
+      <div style="font-size:.78rem;color:var(--ap-muted);margin-bottom:4px;">Showing Records</div>
+      <div style="font-size:1.3rem;font-weight:700;color:var(--ap-dark);">{{ donations|length }}</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div style="background:#fff;border-radius:10px;padding:14px 20px;border:1px solid var(--ap-border);">
+      <div style="font-size:.78rem;color:var(--ap-muted);margin-bottom:4px;">Total Amount</div>
+      <div style="font-size:1.3rem;font-weight:700;color:var(--ap-saffron);">₹{{ total_amount }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="ap-table">
+  <div class="ap-table-body">
+    <table id="tbl-donations" class="table table-hover align-middle w-100">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Amount</th>
+          <th>Purpose</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in donations %}
+        <tr>
+          <td class="text-muted">{{ forloop.counter }}</td>
+          <td class="fw-500">{{ d.name }}</td>
+          <td class="text-muted" style="font-size:.82rem;">{{ d.email|default:"—" }}</td>
+          <td><strong>₹{{ d.amount }}</strong></td>
+          <td class="text-muted" style="font-size:.82rem;">{{ d.purpose|default:"—" }}</td>
+          <td><span class="status-badge {{ d.status }}">{{ d.get_status_display }}</span></td>
+          <td class="text-muted" style="font-size:.8rem;white-space:nowrap;">{{ d.date|date:"d M Y" }}</td>
+          <td>
+            <form method="post" action="{% url 'ap:donations_update_status' d.pk %}" class="d-flex gap-1" style="min-width:160px;">
+              {% csrf_token %}
+              <select name="status" class="form-select form-select-sm" style="font-size:.75rem;">
+                <option value="pending"   {% if d.status == 'pending'   %}selected{% endif %}>Pending</option>
+                <option value="completed" {% if d.status == 'completed' %}selected{% endif %}>Completed</option>
+                <option value="failed"    {% if d.status == 'failed'    %}selected{% endif %}>Failed</option>
+              </select>
+              <button type="submit" class="btn btn-sm btn-outline-secondary" title="Save">
+                <i class="fas fa-save"></i>
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="8" class="text-center text-muted py-4">No donation records found.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(function () {
+  $('#tbl-donations').DataTable({
+    pageLength: 10,
+    lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']],
+    order: [[6, 'desc']],
+    columnDefs: [{ orderable: false, targets: [0, 7] }],
+    language: {
+      search: '', searchPlaceholder: 'Search donations…',
+      lengthMenu: 'Show _MENU_',
+      info: 'Showing _START_–_END_ of _TOTAL_',
+      paginate: { previous: '‹', next: '›' },
+      emptyTable: 'No donation records found.',
+      zeroRecords: 'No matching records found.',
+    }
+  });
+});
+</script>
+{% endblock %}

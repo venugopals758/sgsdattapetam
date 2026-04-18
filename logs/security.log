@@ -1,0 +1,5 @@
+[2026-04-18 17:17:26,495] SECURITY WARNING django.security.csrf | Forbidden (CSRF token missing.): /donations/
+[2026-04-18 17:17:57,041] SECURITY WARNING django.security.csrf | Forbidden (CSRF token missing.): /donations/18/pay/
+[2026-04-18 17:18:10,450] SECURITY WARNING django.security.csrf | Forbidden (CSRF token missing.): /donations/19/pay/
+[2026-04-18 17:18:24,818] SECURITY WARNING django.security.csrf | Forbidden (CSRF token missing.): /donations/20/pay/
+[2026-04-18 17:27:06,536] SECURITY WARNING django.security.csrf | Forbidden (CSRF token missing.): /donations/

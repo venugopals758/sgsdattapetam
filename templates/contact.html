@@ -1,0 +1,337 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Contact Us" %}{% endblock %}
+
+{% block content %}
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="/" style="color:rgba(255,255,255,.5);">{% trans "Home" %}</a></li>
+        <li class="breadcrumb-item active">{% trans "Contact" %}</li>
+      </ol>
+    </nav>
+    <h1>{% trans "Contact Us" %}</h1>
+    <p>{% trans "We'd love to hear from you. Reach out for seva bookings, donations, or any enquiry." %}</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT SECTION
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+    <div class="row g-5 align-items-stretch">
+
+      <!-- Info Card -->
+      <div class="col-lg-4 reveal-left">
+        <div class="contact-info-card">
+          <h3>{% trans "Get in Touch" %}</h3>
+          <p class="sub">
+            We are here to assist you with seva bookings, donation enquiries, and any other
+            information you need about the temple.
+          </p>
+
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="ci-lbl">{% trans "Address" %}</div>
+              <div class="ci-val">123 Temple Road, Mystic Hills,<br>Bangalore – 560 001, Karnataka</div>
+            </div>
+          </div>
+
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <div class="ci-lbl">{% trans "Phone" %}</div>
+              <div class="ci-val">+91 98765 43210<br>+91 80 2345 6789</div>
+            </div>
+          </div>
+
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="ci-lbl">{% trans "Email" %}</div>
+              <div class="ci-val">info@divinetemple.org<br>seva@divinetemple.org</div>
+            </div>
+          </div>
+
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <div class="ci-lbl">{% trans "Temple Hours" %}</div>
+              <div class="ci-val">Monday – Sunday<br>6:00 AM – 8:30 PM</div>
+            </div>
+          </div>
+
+          <div class="ci-item">
+            <div class="ci-icon"><i class="fas fa-office-building" style="font-size:.85rem;"></i></div>
+            <div>
+              <div class="ci-lbl">{% trans "Office Hours" %}</div>
+              <div class="ci-val">Mon – Sat: 9 AM – 5 PM<br>Sunday: 9 AM – 1 PM</div>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div class="social-row">
+            <a class="soc-btn" href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a class="soc-btn" href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a class="soc-btn" href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a class="soc-btn" href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a class="soc-btn" href="#" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-8 reveal-right">
+        <div class="form-card h-100">
+          <h3 style="font-size:1.6rem;margin-bottom:6px;color:var(--dark2);">{% trans "Send Us a Message" %}</h3>
+          <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:32px;">
+            Fill in the form and we'll get back to you within one business day.
+          </p>
+
+          {% if messages %}
+          <div class="mb-4">
+            {% for msg in messages %}
+            <div class="alert alert-{% if msg.tags == 'error' %}danger{% else %}success{% endif %} alert-dismissible fade show" role="alert"
+                 style="border-radius:10px;font-size:.9rem;">
+              <i class="fas {% if msg.tags == 'error' %}fa-exclamation-circle{% else %}fa-check-circle{% endif %} me-2"></i>
+              {{ msg }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <form id="contactForm" method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <div class="row g-4">
+
+              <div class="col-md-6 form-group">
+                <label class="form-label">{% trans "Full Name" %} <span style="color:var(--primary);">*</span></label>
+                <input type="text" name="name" class="form-input" placeholder="Your full name" required>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <label class="form-label">{% trans "Email Address" %} <span style="color:var(--primary);">*</span></label>
+                <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <label class="form-label">{% trans "Mobile Number" %}</label>
+                <input type="tel" name="mobile" class="form-input" placeholder="+91 98765 43210">
+              </div>
+
+              <div class="col-md-6 form-group">
+                <label class="form-label">{% trans "Subject" %}</label>
+                <select name="subject" class="form-input">
+                  <option value="">— Select subject —</option>
+                  <option value="Seva Booking Enquiry">Seva Booking Enquiry</option>
+                  <option value="Donation Information">Donation Information</option>
+                  <option value="Event Enquiry">Event Enquiry</option>
+                  <option value="Volunteer">Volunteer</option>
+                  <option value="Press / Media">Press / Media</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="col-12 form-group">
+                <label class="form-label">{% trans "Message" %} <span style="color:var(--primary);">*</span></label>
+                <textarea name="message" class="form-input" rows="5"
+                          placeholder="Please describe how we can help you…" required></textarea>
+              </div>
+
+              <div class="col-12">
+                <!-- Privacy note -->
+                <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;padding:16px;background:var(--off-white);border-radius:var(--r-sm);">
+                  <i class="fas fa-lock" style="color:var(--primary);margin-top:2px;flex-shrink:0;"></i>
+                  <p style="margin:0;font-size:.8rem;color:var(--text-muted);line-height:1.65;">
+                    Your information is kept strictly private and used only to respond to your enquiry.
+                    We do not share your details with third parties.
+                  </p>
+                </div>
+                <button type="submit" class="btn-saffron" style="padding:14px 40px;font-size:.95rem;">
+                  <i class="fas fa-paper-plane me-2"></i> {% trans "Send Message" %}
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TEMPLE TIMING & MAP
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py bg-off-white">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <!-- Timing Card -->
+      <div class="col-lg-5 reveal-left">
+        <div class="section-title text-start mb-4">
+          <span class="tag">{% trans "Schedule" %}</span>
+          <h2>{% trans "Pooja Timings" %}</h2>
+          <div class="divider" style="margin:0 0 0;"></div>
+        </div>
+        <div class="timing-card">
+          <div class="tc-head"><i class="fas fa-clock me-2"></i>{% trans "Daily Pooja Schedule" %}</div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Suprabhatam</span><span class="tr-time">6:00 AM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Tiruvanandal</span><span class="tr-time">6:30 AM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Kalasanthi Pooja</span><span class="tr-time">8:00 AM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Uchikalam Pooja</span><span class="tr-time">12:00 PM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Sayaratchai</span><span class="tr-time">6:00 PM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Irandaam Kalam</span><span class="tr-time">7:00 PM</span></div>
+          <div class="timing-row"><div class="tr-dot"></div><span class="tr-name">Ardha Jaama Pooja</span><span class="tr-time">8:30 PM</span></div>
+        </div>
+
+        <!-- Quick contact pills -->
+        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="tel:+919876543210"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:white;border:1px solid var(--border);border-radius:50px;font-size:.84rem;font-weight:600;color:var(--dark2);box-shadow:var(--shadow-xs);transition:var(--t);"
+             onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'"
+             onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--dark2)'">
+            <i class="fas fa-phone-alt" style="color:var(--primary);"></i> {% trans "Call Us" %}
+          </a>
+          <a href="https://wa.me/919876543210" target="_blank"
+             style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#25d366;border:none;border-radius:50px;font-size:.84rem;font-weight:600;color:white;box-shadow:var(--shadow-xs);transition:var(--t);"
+             onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Map placeholder -->
+      <div class="col-lg-7 reveal-right">
+        <div class="section-title text-start mb-4">
+          <span class="tag">{% trans "Location" %}</span>
+          <h2>{% trans "Find Us" %}</h2>
+          <div class="divider" style="margin:0 0 0;"></div>
+        </div>
+        <!-- Map embed placeholder -->
+        <div style="border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.987869284631!2d77.5945627!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+            width="100%" height="380" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Temple Location Map">
+          </iframe>
+        </div>
+        <!-- Address under map -->
+        <div style="display:flex;align-items:center;gap:12px;margin-top:16px;padding:14px 18px;background:white;border-radius:var(--r-sm);border:1px solid var(--border);">
+          <i class="fas fa-map-marker-alt" style="color:var(--primary);font-size:1.1rem;flex-shrink:0;"></i>
+          <span style="font-size:.88rem;color:var(--text-body);">
+            <strong>123 Temple Road, Mystic Hills, Bangalore – 560 001</strong><br>
+            <span style="color:var(--text-muted);">Nearest Metro: MG Road Station (500m)</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════════════ -->
+<section class="section-py">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-title reveal">
+          <span class="tag">{% trans "Help" %}</span>
+          <h2>{% trans "Frequently Asked Questions" %}</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="accordion reveal" id="faqAccordion">
+
+          <div class="accordion-item border mb-3" style="border-radius:var(--r-sm)!important;overflow:hidden;border-color:var(--border)!important;">
+            <h2 class="accordion-header">
+              <button class="accordion-button fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"
+                      style="font-family:var(--font-b);font-size:.92rem;background:white;color:var(--dark2);">
+                {% trans "How do I book a seva online?" %}
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="font-size:.88rem;color:var(--text-muted);line-height:1.8;">
+                Visit our <a href="/seva/" style="color:var(--primary);font-weight:600;">Seva page</a>, choose the seva you'd like to book, fill in the booking form with your name, mobile number, preferred date, and gotram. You'll receive a confirmation by SMS/email.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3" style="border-radius:var(--r-sm)!important;overflow:hidden;border-color:var(--border)!important;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"
+                      style="font-family:var(--font-b);font-size:.92rem;background:white;color:var(--dark2);">
+                {% trans "Are donations eligible for 80G tax exemption?" %}
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="font-size:.88rem;color:var(--text-muted);line-height:1.8;">
+                Yes. Divine Temple is a registered charitable trust (Registration No. 12345/BLR/2001) and donations are eligible for 50% deduction under Section 80G of the Income Tax Act. Please provide your PAN number when donating.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3" style="border-radius:var(--r-sm)!important;overflow:hidden;border-color:var(--border)!important;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"
+                      style="font-family:var(--font-b);font-size:.92rem;background:white;color:var(--dark2);">
+                {% trans "Can I visit the temple during pooja hours?" %}
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="font-size:.88rem;color:var(--text-muted);line-height:1.8;">
+                Absolutely. The temple is open to all devotees from 6:00 AM to 8:30 PM daily. During special poojas and Abhishekam, the sanctum may be temporarily closed to general entry for 30–45 minutes.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3" style="border-radius:var(--r-sm)!important;overflow:hidden;border-color:var(--border)!important;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#faq4"
+                      style="font-family:var(--font-b);font-size:.92rem;background:white;color:var(--dark2);">
+                {% trans "Is the Annadanam free for all?" %}
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="font-size:.88rem;color:var(--text-muted);line-height:1.8;">
+                Yes. Annadanam (free meals) is served every day from 11:30 AM to 1:30 PM and is open to all without any distinction of caste, creed, or religion. No registration needed — simply visit the Annadanam Hall.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border" style="border-radius:var(--r-sm)!important;overflow:hidden;border-color:var(--border)!important;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-600" type="button" data-bs-toggle="collapse" data-bs-target="#faq5"
+                      style="font-family:var(--font-b);font-size:.92rem;background:white;color:var(--dark2);">
+                {% trans "How can I volunteer at the temple?" %}
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="font-size:.88rem;color:var(--text-muted);line-height:1.8;">
+                We welcome volunteers for Annadanam, festival support, Goshala seva, and administrative work. Please fill in the contact form above or call our office. We'll invite you for an orientation session.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /accordion -->
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
