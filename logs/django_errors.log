@@ -139,3 +139,14 @@ Traceback (most recent call last):
 smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82f932daa68sm4566649b3a.49 - gsmtp')
 [2026-04-18 19:45:50,810] INFO django.server "POST /donations/43/verify/ HTTP/1.1" 302 0
 [2026-04-18 19:45:50,826] INFO django.server "GET /payment-success/ HTTP/1.1" 200 12562
+[2026-04-18 21:05:23,005] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:23,040] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:23,060] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:23,085] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:23,087] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:23,093] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:23,105] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:23,105] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:23,460] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:23,787] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
+[2026-04-18 21:05:24,120] INFO django.utils.autoreload D:\New folder (3a)\temple\settings.py changed, reloading.
